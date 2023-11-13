@@ -16,19 +16,19 @@ header {
 header > .title {
   width: 253px;
   height: 80px;
-  background: url(/img/title.svg) no-repeat center center/contain;
+  background: url(../img/title.svg) no-repeat center center/contain;
 }
 header > .menu-wrap {
-  width: 12%;
+  width: 400px;
   position: fixed;
-  top: 47%;
+  top: 50%;
   left: 136px;
-  transform: translate(0%, -47%);
+  transform: translate(0%, -50%);
   z-index: 1000;
 }
 header > .menu-wrap > ul > li {
   cursor: pointer;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 header > .menu-wrap > ul > li:last-child {
   margin-bottom: 0;
@@ -38,7 +38,7 @@ header > .menu-wrap > ul > li > a {
   height: 100%;
   display: inline-block;
   color: #95A4D3;
-  font-size: 24px;
+  font-size: 20px;
   font-family: "Poppins", sans-serif;
   padding: 12px 24px;
 }
@@ -52,12 +52,12 @@ header > .menu-wrap > ul > li > a:hover {
   width: 100%;
   height: 1080px;
   position: relative;
-  background: url(/img/content-bg.svg) no-repeat center center/cover;
+  background: url(../img/content-bg.svg) no-repeat center center/cover;
 }
 .main-cover > .content-wrap {
   width: 100%;
   height: 80%;
-  background: url(/img/content.svg) no-repeat center center/contain;
+  background: url(../img/content.svg) no-repeat center center/contain;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -67,7 +67,7 @@ header > .menu-wrap > ul > li > a:hover {
   width: 100%;
 }
 .main-cover > .star-wrap > div {
-  background: url(/img/star.svg) no-repeat center center/contain;
+  background: url(../img/star.svg) no-repeat center center/contain;
   width: 100px;
   height: 100px;
   position: absolute;
