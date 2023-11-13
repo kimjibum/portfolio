@@ -44,7 +44,7 @@ header > .menu-wrap > ul > li > a {
 }
 header > .menu-wrap > ul > li > a:hover {
   border-radius: 300px;
-  background: rgba(149, 164, 211, 0.231372549);
+  background: linear-gradient(90deg, rgba(149, 164, 211, 0.3019607843) 0%, rgba(217, 217, 217, 0) 70%);
 }
 
 .main-cover {
@@ -130,10 +130,11 @@ header > .menu-wrap > ul > li > a:hover {
 .article-wrap {
   display: flex;
   justify-content: center;
-  padding: 0 160px;
+  padding: 0 420px;
 }
 .article-wrap > .article-01 {
-  border: 1px solid red;
   width: 100%;
-  height: 60px;
+}
+.article-wrap > .article-01 > img {
+  width: 100%;
 }/*# sourceMappingURL=gnb-01.css.map */

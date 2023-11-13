@@ -37,7 +37,8 @@ header{
           padding: 12px 24px;
           &:hover{
             border-radius: 300px;
-            background: #95a4d33b;
+            background: linear-gradient(90deg, #95a4d34d 0%, rgba(217, 217, 217, 0.00) 70%);
+            
           }
         }
       }
@@ -126,10 +127,11 @@ header{
 .article-wrap{
   display: flex;
   justify-content: center;
-  padding: 0 160px;
+  padding: 0 420px;
   > .article-01{
-    border: 1px solid red;
     width: 100%;
-    height: 60px;
+    > img{
+      width: 100%;
+    }
   }
 }
