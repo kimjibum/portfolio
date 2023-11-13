@@ -1,0 +1,246 @@
+//
+// @File Name : _variables
+//
+// 수정일 | 수정자 | 수정내용
+// 2021.06.09 | 김지범 | 최초 작성
+//
+// @author 김지범
+//
+// ★★ 이 파일은 절대 편집하지 마세요. 
+//
+
+////////////////////////////// COLOR //////////////////////////////
+// 각 컬러당 -05번이 기준 컬러 //
+// RED //
+$red-color-01: #720a2e;
+$red-color-02: #8a1131;
+$red-color-03: #ac1b34;
+$red-color-04: #cd2836;
+$red-color-05: #ef3737;
+$red-color-06: #f57367;
+$red-color-07: #fa9a86;
+$red-color-08: #fdc3af;
+$red-color-09: #fee4d7;
+$red-color-10: #ffefe7;
+// ORANGE //
+$orange-color-01: #780d00;
+$orange-color-02: #921900;
+$orange-color-03: #b52b00;
+$orange-color-04: #d84000;
+$orange-color-05: #fc5b00;
+$orange-color-06: #fd8f3f;
+$orange-color-07: #feaf65;
+$orange-color-08: #fed098;
+$orange-color-09: #feeacb;
+$orange-color-10: #fef0d9;
+// YELLOW //
+$yellow-color-01: #7a4a00;
+$yellow-color-02: #935d00;
+$yellow-color-03: #b77900;
+$yellow-color-04: #db9700;
+$yellow-color-05: #ffb800;
+$yellow-color-06: #ffcf3f;
+$yellow-color-07: #ffdd66;
+$yellow-color-08: #ffeb99;
+$yellow-color-09: #fff6cc;
+$yellow-color-10: #fff9db;
+// LIME //
+$lime-color-01: #4d7010;
+$lime-color-02: #62881b;
+$lime-color-03: #81a92b;
+$lime-color-04: #a1ca3f;
+$lime-color-05: #c4eb57;
+$lime-color-06: #d7f380;
+$lime-color-07: #e5f99a;
+$lime-color-08: #f1fdbd;
+$lime-color-09: #f9fede;
+$lime-color-10: #fcffec;
+// GREEN //
+$green-color-01: #09533a;
+$green-color-02: #106440;
+$green-color-03: #1a7c48;
+$green-color-04: #26944f;
+$green-color-05: #34ad56;
+$green-color-06: #61cd75;
+$green-color-07: #85e68e;
+$green-color-08: #b2f6b1;
+$green-color-09: #dbfad7;
+$green-color-10: #ecffe9;
+// TEAL //
+$teal-color-01: #004e5a;
+$teal-color-02: #00696d;
+$teal-color-03: #00877e;
+$teal-color-04: #00a187;
+$teal-color-05: #00bc8b;
+$teal-color-06: #35d69d;
+$teal-color-07: #5deaaa;
+$teal-color-08: #94f8c1;
+$teal-color-09: #c9fbdb;
+$teal-color-10: #e8fff7;
+// CYAN //
+$cyan-color-01: #083c58;
+$cyan-color-02: #0e526a;
+$cyan-color-03: #177084;
+$cyan-color-04: #21929e;
+$cyan-color-05: #2eb7b8;
+$cyan-color-06: #5cd4ca;
+$cyan-color-07: #80e9d8;
+$cyan-color-08: #adf7e5;
+$cyan-color-09: #d5fbee;
+$cyan-color-10: #e3fafc;
+// BLUE //
+$blue-color-01: #021a76;
+$blue-color-02: #04258f;
+$blue-color-03: #0735b1;
+$blue-color-04: #0a48d4;
+$blue-color-05: #0f5ef7;
+$blue-color-06: #498cfa;
+$blue-color-07: #6ea8fc;
+$blue-color-08: #9ec9fe;
+$blue-color-09: #cee5fe;
+$blue-color-10: #ddedfe;
+// INDIGO //
+$indigo-color-01: #0c1175;
+$indigo-color-02: #141b8e;
+$indigo-color-03: #202ab0;
+$indigo-color-04: #2e3bd2;
+$indigo-color-05: #4050f5;
+$indigo-color-06: #6f7cf9;
+$indigo-color-07: #8c98fc;
+$indigo-color-08: #b2bbfe;
+$indigo-color-09: #d8ddfe;
+$indigo-color-10: #e6e9fe;
+// VIOLET //
+$violet-color-01: #180b6d;
+$violet-color-02: #241384;
+$violet-color-03: #351ea4;
+$violet-color-04: #492cc4;
+$violet-color-05: #613de4;
+$violet-color-06: #8a6bee;
+$violet-color-07: #a68af6;
+$violet-color-08: #c7b2fc;
+$violet-color-09: #e3d8fd;
+$violet-color-10: #f0e9ff;
+// GRAPE //
+$grape-color-01: #350341;
+$grape-color-02: #47054f;
+$grape-color-03: #610862;
+$grape-color-04: #750b6d;
+$grape-color-05: #891074;
+$grape-color-06: #b83e97;
+$grape-color-07: #db67b1;
+$grape-color-08: #f39dcc;
+$grape-color-09: #f9cde0;
+$grape-color-10: #ffe0ed;
+// PINK //
+$pink-color-01: #7a0c4d;
+$pink-color-02: #931553;
+$pink-color-03: #b7215c;
+$pink-color-04: #db3063;
+$pink-color-05: #ff4269;
+$pink-color-06: #ff7180;
+$pink-color-07: #ff8d8f;
+$pink-color-08: #ffb9b3;
+$pink-color-09: #ffdfd9;
+$pink-color-10: #fdeae6;
+// NAVY //
+$navy-color-01: #000622;
+$navy-color-02: #000929;
+$navy-color-03: #000d33;
+$navy-color-04: #00123d;
+$navy-color-05: #001847;
+$navy-color-06: #244c90;
+$navy-color-07: #4f80c7;
+$navy-color-08: #8db7ec;
+$navy-color-09: #c4dcf5;
+$navy-color-10: #d7ebff;
+// GRAY //
+$gray-color-01: #212529;
+$gray-color-02: #343a40;
+$gray-color-03: #495057;
+$gray-color-04: #868e96;
+$gray-color-05: #adb5bd;
+$gray-color-06: #ced4da;
+$gray-color-07: #dee2e6;
+$gray-color-08: #e9ecef;
+$gray-color-09: #f1f3f5;
+$gray-color-10: #f8f9fa;
+// SYSTEM COLOR //
+$system-color-01: #d32f2f;
+$system-color-02: #f9a825;
+$system-color-03: #4caf50;
+$system-color-04: #0091ea;
+// BASIC COLOR //
+$white: #fff;
+$black: #000;
+$red: #ff0000;
+$orange: #ffa500;
+$yellow: #ffff00;
+$green: #008000;
+$blue: #0000ff;
+$purple: #800080;
+// TEXT COLOR //
+$text-color-01: $navy-color-05; // TITLE, TEXT
+$text-color-02: #808ca3; // TEXT
+$text-color-03: #b3bac8; // TEXT
+$text-color-04: $white; // TEXT
+$text-color-05: rgba(0, 24, 71, 0.38); // DISABLED
+$text-color-06: rgba(255, 255, 255, 0.38); // DISABLED
+$text-color-07: $blue-color-05; // HOVER, LINK
+// BACKGROUND COLOR //
+$background-color-01: #f4f7ff;
+$background-color-02: #e9effe;
+////////////////////////////// BORDER //////////////////////////////
+$border-solid-01: 1px solid #dadce1; // DEFAULT
+$border-solid-02: 1px solid rgba(237, 237, 237, 0.38); // DISABLED
+$border-solid-03: 1px solid $blue-color-05; // FOCUS
+
+$border-dotted-01: 1px dotted #dadce1; // DEFAULT
+$border-dotted-02: 1px dotted rgba(237, 237, 237, 0.38); // DISABLED
+$border-dotted-03: 1px dotted $blue-color-05; // FOCUS
+////////////////////////////// FONT //////////////////////////////
+// FONT FAMILY //
+$font-family-noto-sans: 'Noto Sans Korean', '맑은 고딕', 'Malgun Gothic', '돋움', 'Dotum', sans-serif;
+// FONT SIZE //
+// 제목 기준 사이즈 : $title-medium //
+$title-2x-small: 0.75rem; // 12px //
+$title-x-small: 0.875rem; // 14px //
+$title-small: 1rem; // 16px //
+$title-medium: 1.125rem; // 18px //
+$title-large: 1.313rem; // 21px //
+$title-x-large: 1.5rem; // 24px //
+$title-2x-large: 2.25rem; // 36px //
+$title-3x-large: 3rem; // 48px //
+$title-4x-large: 3.75rem; // 60px //
+$title-5x-large: 4.5rem; // 72px //
+// 일반 텍스트 기준 사이즈 : $text-medium //
+$text-2x-small: 0.625rem; // 10px //
+$text-x-small: 0.75rem; // 12px //
+$text-small: 0.875rem; // 14px //
+$text-medium: 1rem; // 16px //
+$text-large: 1.125rem; // 18px //
+$text-x-large: 1.25rem; // 20px //
+$text-2x-large: 1.375rem; // 22px //
+$text-3x-large: 1.5rem; // 24px //
+$text-4x-large: 1.625rem; // 26px //
+$text-5x-large: 1.75rem; // 28px //
+////////////////////////////// HEIGHT //////////////////////////////
+$height-3x-small: 24px;
+$height-2x-small: 28px;
+$height-x-small: 32px;
+$height-small: 36px;
+$height-medium: 40px;
+$height-large: 44px;
+$height-x-large: 48px;
+$height-2x-large: 52px;
+$height-3x-large: 56px;
+////////////////////////////// LETTER SPACING //////////////////////////////
+$letter-spacing-px-default: -0.3px;
+$letter-spacing-rem-default: -0.03rem;
+////////////////////////////// LINE HEIGHT //////////////////////////////
+$line-height-small: 1.5;
+$line-height-medium: 1.75;
+////////////////////////////// MEDIA QUERY //////////////////////////////
+$breakpoint-desktop: 1280px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 360px;

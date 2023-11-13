@@ -1,0 +1,51 @@
+/*
+ * @File Name : base
+ *
+ * 수정일 | 수정자 | 수정내용
+ * 2023.11.13 | 김지범 | 최초 작성
+ *
+ * @author 김지범
+ *
+ * ★★ 이 파일은 절대 편집하지 마세요. 
+ */
+
+ @import "_variables", "_mixin";
+
+ *{padding: 0; margin: 0;}
+ html, body{
+     overflow-x: hidden;
+     @include basic-style($font-family: $font-family-noto-sans);
+ }
+ button{
+     font-family: inherit;
+     color: $text-color-01;
+     background: none;
+     border: none;
+     cursor: pointer;
+ }
+ a{text-decoration: none; color: $text-color-01;}
+ ul, ol, li{list-style-type: none;}
+ select{
+     font-family: inherit;
+     cursor: pointer;
+     -webkit-appearance: none;
+        -moz-appearance: none;
+             appearance: none;
+     &::-ms-expand{display: none;}
+     &[value=""][hidden]{display: none;}
+ }
+ img, input{border: 0;}
+ input, textarea, pre{font-family: inherit;}
+ table{border-collapse: collapse; border-spacing: 0;}
+ address{font-style: $text-medium;}
+ header, section, aside, footer, nav, div, span, ul, ol, li, a, p, form, select, option, input, textarea{
+     -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+             box-sizing: border-box;
+ }
+ h1, h2, h3, h4, h5, h6{
+     font: {
+         size: $text-medium;
+         weight: 400;
+     }
+ }

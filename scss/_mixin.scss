@@ -1,0 +1,1702 @@
+//
+// @File Name : _mixin
+//
+// 수정일 | 수정자 | 수정내용
+// 2023.11.23 | 김지범 | 최초 작성
+//
+// @author 김지범
+//
+// 각 믹스인은 알파벳순으로 정렬되어 있습니다. (<< DEFAULT >> 제외)
+// ★★ 이 파일은 절대 편집하지 마세요. 
+//
+
+////////////////////////////// << DEFAULT >> //////////////////////////////
+@mixin basic-style($font-family: null){
+  font: {
+      family: $font-family-noto-sans;
+      size: $text-medium;
+      weight: 400;
+  }
+  letter-spacing: $letter-spacing-px-default;
+  letter-spacing: $letter-spacing-rem-default;
+  line-height: $line-height-medium;
+  color: $text-color-01;
+}
+////////////////////////////// BOX SHADOW //////////////////////////////
+@mixin box-shadow-01{box-shadow: 1px 1px 20px #e7eaf3;}
+@mixin box-shadow-02{box-shadow: 1px 1px 10px #e7eaf3;}
+@mixin box-shadow-03{box-shadow: 3px 3px 10px #e7eaf3;}
+////////////////////////////// BREADCRUMB //////////////////////////////
+@mixin breadcrumb{
+  display: flex;
+  > li{
+      display: flex;
+      align-items: center;
+      font-size: $text-small;
+      &.home{
+          > a{
+              display: flex;
+              align-items: center;
+              &:before{
+                  content: "";
+                  display: inline-block;
+                  width: 13px;
+                  height: 14px;
+                  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 14' fill='%23b3bac8'%3e%3cg id='Layer_2' data-name='Layer 2'%3e%3cg id='Layer_1-2' data-name='Layer 1'%3e%3cpath d='M5%2c10v3.5a.5.5%2c0%2c0%2c1-.5.5H.5a.5.5%2c0%2c0%2c1-.5-.5v-7a.47.47%2c0%2c0%2c1%2c.15-.35l6-6a.48.48%2c0%2c0%2c1%2c.7%2c0h0l6%2c6A.47.47%2c0%2c0%2c1%2c13%2c6.5v7a.5.5%2c0%2c0%2c1-.5.5h-4a.5.5%2c0%2c0%2c1-.5-.5V10a.54.54%2c0%2c0%2c0-.5-.5h-2A.54.54%2c0%2c0%2c0%2c5%2c10Z'/%3e%3cpath class='cls-1' d='M11.5%2c1.5V5l-2-2V1.5A.5.5%2c0%2c0%2c1%2c10%2c1h1A.5.5%2c0%2c0%2c1%2c11.5%2c1.5Z'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e") no-repeat center;
+                  margin-right: 10px;
+              }
+              &:hover, &:focus{&:before{background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 14' fill='%230f5ef7'%3e%3cg id='Layer_2' data-name='Layer 2'%3e%3cg id='Layer_1-2' data-name='Layer 1'%3e%3cpath d='M5%2c10v3.5a.5.5%2c0%2c0%2c1-.5.5H.5a.5.5%2c0%2c0%2c1-.5-.5v-7a.47.47%2c0%2c0%2c1%2c.15-.35l6-6a.48.48%2c0%2c0%2c1%2c.7%2c0h0l6%2c6A.47.47%2c0%2c0%2c1%2c13%2c6.5v7a.5.5%2c0%2c0%2c1-.5.5h-4a.5.5%2c0%2c0%2c1-.5-.5V10a.54.54%2c0%2c0%2c0-.5-.5h-2A.54.54%2c0%2c0%2c0%2c5%2c10Z'/%3e%3cpath class='cls-1' d='M11.5%2c1.5V5l-2-2V1.5A.5.5%2c0%2c0%2c1%2c10%2c1h1A.5.5%2c0%2c0%2c1%2c11.5%2c1.5Z'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e") no-repeat center;}}
+          }
+      }
+      &:last-child{
+          color: $text-color-01;
+          &:after{display: none;}
+      }
+      &:after{
+          content: "";
+          display: inline-block;
+          width: 7px;
+          height: 12px;
+          background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5.25 9.75' fill='%23b3bac8'%3e%3cg id='Layer_2' data-name='Layer 2'%3e%3cg id='Layer_1-2' data-name='Layer 1'%3e%3cpath class='cls-1' d='M.11.11a.37.37%2c0%2c0%2c1%2c.53%2c0h0l4.5%2c4.5a.37.37%2c0%2c0%2c1%2c0%2c.53h0L.64%2c9.64a.37.37%2c0%2c0%2c1-.53%2c0%2c.37.37%2c0%2c0%2c1%2c0-.53L4.35%2c4.88.11.64a.37.37%2c0%2c0%2c1%2c0-.53Z'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e") no-repeat center;
+          margin: 0 20px 0 20px;
+      }
+      > a{
+          color: $text-color-03;
+          &:hover{color: $blue-color-05;}
+          &:focus{color: $blue-color-05; outline: 2px solid $blue-color-08;}
+      }
+  }
+}
+////////////////////////////// BUTTON //////////////////////////////
+@mixin button-3x-small{
+  height: $height-3x-small;
+  font-size: $text-2x-small;
+  border-radius: 2px;
+  padding: 0 4px;
+}
+@mixin button-2x-small{
+  height: $height-2x-small;
+  font-size: $text-x-small;
+  border-radius: 4px;
+  padding: 0 8px;
+}
+@mixin button-x-small{
+  height: $height-x-small;
+  font-size: $text-x-small;
+  border-radius: 4px;
+  padding: 0 8px;
+}
+@mixin button-small{
+  height: $height-small;
+  font-size: $text-x-small;
+  border-radius: 4px;
+  padding: 0 12px;
+}
+@mixin button-medium{
+  height: $height-medium;
+  font-size: $text-x-small;
+  border-radius: 4px;
+  padding: 0 16px;
+}
+@mixin button-large{
+  height: $height-small;
+  font-size: $text-small;
+  border-radius: 6px;
+  padding: 0 20px;
+}
+@mixin button-x-large{
+  height: $height-x-large;
+  font-size: $text-small;
+  border-radius: 6px;
+  padding: 0 24px;
+}
+@mixin button-2x-large{
+  height: $height-2x-large;
+  font-size: $text-small;
+  border-radius: 6px;
+  padding: 0 28px;
+}
+@mixin button-3x-large{
+  height: $height-3x-large;
+  font-size: $text-medium;
+  border-radius: 8px;
+  padding: 0 32px;
+}
+///// 배경색 있는 버튼 1 /////
+@mixin button-fill-01-01{
+  fill: $white;
+  color: $white;
+  background-color: $red-color-05;
+  &:hover{background-color: $red-color-04}
+  &:disabled{background-color: $red-color-05}
+}
+@mixin button-fill-01-02{
+  fill: $white;
+  color: $white;
+  background-color: $orange-color-05;
+  &:hover{background-color: $orange-color-04}
+  &:disabled{background-color: $orange-color-05}
+}
+@mixin button-fill-01-03{
+  fill: $white;
+  color: $white;
+  background-color: $yellow-color-05;
+  &:hover{background-color: $yellow-color-04}
+  &:disabled{background-color: $yellow-color-05}
+}
+@mixin button-fill-01-04{
+  fill: $white;
+  color: $white;
+  background-color: $lime-color-05;
+  &:hover{background-color: $lime-color-04}
+  &:disabled{background-color: $lime-color-05}
+}
+@mixin button-fill-01-05{
+  fill: $white;
+  color: $white;
+  background-color: $green-color-05;
+  &:hover{background-color: $green-color-04}
+  &:disabled{background-color: $green-color-05}
+}
+@mixin button-fill-01-06{
+  fill: $white;
+  color: $white;
+  background-color: $teal-color-05;
+  &:hover{background-color: $teal-color-04}
+  &:disabled{background-color: $teal-color-05}
+}
+@mixin button-fill-01-07{
+  fill: $white;
+  color: $white;
+  background-color: $cyan-color-05;
+  &:hover{background-color: $cyan-color-04}
+  &:disabled{background-color: $cyan-color-05}
+}
+@mixin button-fill-01-08{
+  fill: $white;
+  color: $white;
+  background-color: $blue-color-05;
+  &:hover{background-color: $blue-color-04}
+  &:disabled{background-color: $blue-color-05}
+}
+@mixin button-fill-01-09{
+  fill: $white;
+  color: $white;
+  background-color: $indigo-color-05;
+  &:hover{background-color: $indigo-color-04}
+  &:disabled{background-color: $indigo-color-05}
+}
+@mixin button-fill-01-10{
+  fill: $white;
+  color: $white;
+  background-color: $violet-color-05;
+  &:hover{background-color: $violet-color-04}
+  &:disabled{background-color: $violet-color-05}
+}
+@mixin button-fill-01-11{
+  fill: $white;
+  color: $white;
+  background-color: $grape-color-05;
+  &:hover{background-color: $grape-color-04}
+  &:disabled{background-color: $grape-color-05}
+}
+@mixin button-fill-01-12{
+  fill: $white;
+  color: $white;
+  background-color: $pink-color-05;
+  &:hover{background-color: $pink-color-04}
+  &:disabled{background-color: $pink-color-05}
+}
+@mixin button-fill-01-13{
+  fill: $white;
+  color: $white;
+  background-color: $gray-color-05;
+  &:hover{background-color: $gray-color-04}
+  &:disabled{background-color: $gray-color-05}
+}
+///// 배경색 있는 버튼 2 /////
+@mixin button-fill-02-01{
+  fill: $red-color-05;
+  color: $red-color-05;
+  background-color: $red-color-09;
+  &:hover{fill: $red-color-04; color: $red-color-04; background-color: $red-color-08;}
+  &:disabled{color: $red-color-05; background-color: $red-color-09;}
+}
+@mixin button-fill-02-02{
+  fill: $orange-color-05;
+  color: $orange-color-05;
+  background-color: $orange-color-09;
+  &:hover{fill: $orange-color-04; color: $orange-color-04; background-color: $orange-color-08;}
+  &:disabled{color: $orange-color-05; background-color: $orange-color-09;}
+}
+@mixin button-fill-02-03{
+  fill: $yellow-color-05;
+  color: $yellow-color-05;
+  background-color: $yellow-color-09;
+  &:hover{fill: $yellow-color-04; color: $yellow-color-04; background-color: $yellow-color-08;}
+  &:disabled{color: $yellow-color-05; background-color: $yellow-color-09;}
+}
+@mixin button-fill-02-04{
+  fill: $lime-color-05;
+  color: $lime-color-05;
+  background-color: $lime-color-09;
+  &:hover{fill: $lime-color-04; color: $lime-color-04; background-color: $lime-color-08;}
+  &:disabled{color: $lime-color-05; background-color: $lime-color-09;}
+}
+@mixin button-fill-02-05{
+  fill: $green-color-05;
+  color: $green-color-05;
+  background-color: $green-color-09;
+  &:hover{fill: $green-color-04; color: $green-color-04; background-color: $green-color-08;}
+  &:disabled{color: $green-color-05; background-color: $green-color-09;}
+}
+@mixin button-fill-02-06{
+  fill: $teal-color-05;
+  color: $teal-color-05;
+  background-color: $teal-color-09;
+  &:hover{fill: $teal-color-04; color: $teal-color-04; background-color: $teal-color-08;}
+  &:disabled{color: $teal-color-05; background-color: $teal-color-09;}
+}
+@mixin button-fill-02-07{
+  fill: $cyan-color-05;
+  color: $cyan-color-05;
+  background-color: $cyan-color-09;
+  &:hover{fill: $cyan-color-04; color: $cyan-color-04; background-color: $cyan-color-08;}
+  &:disabled{color: $cyan-color-05; background-color: $cyan-color-09;}
+}
+@mixin button-fill-02-08{
+  fill: $blue-color-05;
+  color: $blue-color-05;
+  background-color: $blue-color-09;
+  &:hover{fill: $blue-color-04; color: $blue-color-04; background-color: $blue-color-08;}
+  &:disabled{color: $blue-color-05; background-color: $blue-color-09;}
+}
+@mixin button-fill-02-09{
+  fill: $indigo-color-05;
+  color: $indigo-color-05;
+  background-color: $indigo-color-09;
+  &:hover{fill: $indigo-color-04; color: $indigo-color-04; background-color: $indigo-color-08;}
+  &:disabled{color: $indigo-color-05; background-color: $indigo-color-09;}
+}
+@mixin button-fill-02-10{
+  fill: $violet-color-05;
+  color: $violet-color-05;
+  background-color: $violet-color-09;
+  &:hover{fill: $violet-color-04; color: $violet-color-04; background-color: $violet-color-08;}
+  &:disabled{color: $violet-color-05; background-color: $violet-color-09;}
+}
+@mixin button-fill-02-11{
+  fill: $grape-color-05;
+  color: $grape-color-05;
+  background-color: $grape-color-09;
+  &:hover{fill: $grape-color-04; color: $grape-color-04; background-color: $grape-color-08;}
+  &:disabled{color: $grape-color-05; background-color: $grape-color-09;}
+}
+@mixin button-fill-02-12{
+  fill: $pink-color-05;
+  color: $pink-color-05;
+  background-color: $pink-color-09;
+  &:hover{fill: $pink-color-04; color: $pink-color-04; background-color: $pink-color-08;}
+  &:disabled{color: $pink-color-05; background-color: $pink-color-09;}
+}
+@mixin button-fill-02-13{
+  fill: $gray-color-05;
+  color: $gray-color-05;
+  background-color: $gray-color-09;
+  &:hover{fill: $gray-color-04; color: $gray-color-04; background-color: $gray-color-08;}
+  &:disabled{color: $gray-color-05; background-color: $gray-color-09;}
+}
+// ///// 외곽선 있는 버튼 /////
+@mixin button-outline-01{
+  fill: $red-color-05;
+  color: $red-color-05;
+  background-color: $white;
+  border: 1px solid $red-color-05;
+  &:hover{fill: $red-color-04; color: $red-color-04; border: 1px solid $red-color-04;}
+  &:disabled{color: $red-color-05; border: 1px solid $red-color-05;}
+}
+@mixin button-outline-02{
+  fill: $orange-color-05;
+  color: $orange-color-05;
+  background-color: $white;
+  border: 1px solid $orange-color-05;
+  &:hover{fill: $orange-color-04; color: $orange-color-04; border: 1px solid $orange-color-04;}
+  &:disabled{color: $orange-color-05; border: 1px solid $orange-color-05;}
+}
+@mixin button-outline-03{
+  fill: $yellow-color-05;
+  color: $yellow-color-05;
+  background-color: $white;
+  border: 1px solid $yellow-color-05;
+  &:hover{fill: $yellow-color-04; color: $yellow-color-04; border: 1px solid $yellow-color-04;}
+  &:disabled{color: $yellow-color-05; border: 1px solid $yellow-color-05;}
+}
+@mixin button-outline-04{
+  fill: $lime-color-05;
+  color: $lime-color-05;
+  background-color: $white;
+  border: 1px solid $lime-color-05;
+  &:hover{fill: $lime-color-04; color: $lime-color-04; border: 1px solid $lime-color-04;}
+  &:disabled{color: $lime-color-05; border: 1px solid $lime-color-05;}
+}
+@mixin button-outline-05{
+  fill: $green-color-05;
+  color: $green-color-05;
+  background-color: $white;
+  border: 1px solid $green-color-05;
+  &:hover{fill: $green-color-04; color: $green-color-04; border: 1px solid $green-color-04;}
+  &:disabled{color: $green-color-05; border: 1px solid $green-color-05;}
+}
+@mixin button-outline-06{
+  fill: $teal-color-05;
+  color: $teal-color-05;
+  background-color: $white;
+  border: 1px solid $teal-color-05;
+  &:hover{fill: $teal-color-04; color: $teal-color-04; border: 1px solid $teal-color-04;}
+  &:disabled{color: $teal-color-05; border: 1px solid $teal-color-05;}
+}
+@mixin button-outline-07{
+  fill: $cyan-color-05;
+  color: $cyan-color-05;
+  background-color: $white;
+  border: 1px solid $cyan-color-05;
+  &:hover{fill: $cyan-color-04; color: $cyan-color-04; border: 1px solid $cyan-color-04;}
+  &:disabled{color: $cyan-color-05; border: 1px solid $cyan-color-05;}
+}
+@mixin button-outline-08{
+  fill: $blue-color-05;
+  color: $blue-color-05;
+  background-color: $white;
+  border: 1px solid $blue-color-05;
+  &:hover{fill: $blue-color-04; color: $blue-color-04; border: 1px solid $blue-color-04;}
+  &:disabled{color: $blue-color-05; border: 1px solid $blue-color-05;}
+}
+@mixin button-outline-09{
+  fill: $indigo-color-05;
+  color: $indigo-color-05;
+  background-color: $white;
+  border: 1px solid $indigo-color-05;
+  &:hover{fill: $indigo-color-04; color: $indigo-color-04; border: 1px solid $indigo-color-04;}
+  &:disabled{color: $indigo-color-05; border: 1px solid $indigo-color-05;}
+}
+@mixin button-outline-10{
+  fill: $violet-color-05;
+  color: $violet-color-05;
+  background-color: $white;
+  border: 1px solid $violet-color-05;
+  &:hover{fill: $violet-color-04; color: $violet-color-04; border: 1px solid $violet-color-04;}
+  &:disabled{color: $violet-color-05; border: 1px solid $violet-color-05;}
+}
+@mixin button-outline-11{
+  fill: $grape-color-05;
+  color: $grape-color-05;
+  background-color: $white;
+  border: 1px solid $grape-color-05;
+  &:hover{fill: $grape-color-04; color: $grape-color-04; border: 1px solid $grape-color-04;}
+  &:disabled{color: $grape-color-05; border: 1px solid $grape-color-05;}
+}
+@mixin button-outline-12{
+  fill: $pink-color-05;
+  color: $pink-color-05;
+  background-color: $white;
+  border: 1px solid $pink-color-05;
+  &:hover{fill: $pink-color-04; color: $pink-color-04; border: 1px solid $pink-color-04;}
+  &:disabled{color: $pink-color-05; border: 1px solid $pink-color-05;}
+}
+@mixin button-outline-13{
+  fill: $gray-color-05;
+  color: $gray-color-05;
+  background-color: $white;
+  border: 1px solid $gray-color-05;
+  &:hover{fill: $gray-color-04; color: $gray-color-04; border: 1px solid $gray-color-04;}
+  &:disabled{color: $gray-color-05; border: 1px solid $gray-color-05;}
+}
+// ///// 결합 버튼 /////
+@mixin button-combination-01{
+  fill: $red-color-05;
+  color: $red-color-05;
+  background-color: $red-color-09;
+  border: 1px solid $red-color-05;
+  &:hover{
+      fill: $red-color-04;
+      color: $red-color-04;
+      background-color: $red-color-08;
+      border: 1px solid $red-color-04;
+  }
+  &:disabled{color: $red-color-05; background-color: $red-color-09; border: 1px solid $red-color-05;}
+}
+@mixin button-combination-02{
+  fill: $orange-color-05;
+  color: $orange-color-05;
+  background-color: $orange-color-09;
+  border: 1px solid $orange-color-05;
+  &:hover{
+      fill: $orange-color-04;
+      color: $orange-color-04;
+      background-color: $orange-color-08;
+      border: 1px solid $orange-color-04;
+  }
+  &:disabled{color: $orange-color-05; background-color: $orange-color-09; border: 1px solid $orange-color-05;}
+}
+@mixin button-combination-03{
+  fill: $yellow-color-05;
+  color: $yellow-color-05;
+  background-color: $yellow-color-09;
+  border: 1px solid $yellow-color-05;
+  &:hover{
+      fill: $yellow-color-04;
+      color: $yellow-color-04;
+      background-color: $yellow-color-08;
+      border: 1px solid $yellow-color-04;
+  }
+  &:disabled{color: $yellow-color-05; background-color: $yellow-color-09; border: 1px solid $yellow-color-05;}
+}
+@mixin button-combination-04{
+  fill: $lime-color-05;
+  color: $lime-color-05;
+  background-color: $lime-color-09;
+  border: 1px solid $lime-color-05;
+  &:hover{
+      fill: $lime-color-04;
+      color: $lime-color-04;
+      background-color: $lime-color-08;
+      border: 1px solid $lime-color-04;
+  }
+  &:disabled{color: $lime-color-05; background-color: $lime-color-09; border: 1px solid $lime-color-05;}
+}
+@mixin button-combination-05{
+  fill: $green-color-05;
+  color: $green-color-05;
+  background-color: $green-color-09;
+  border: 1px solid $green-color-05;
+  &:hover{
+      fill: $green-color-04;
+      color: $green-color-04;
+      background-color: $green-color-08;
+      border: 1px solid $green-color-04;
+  }
+  &:disabled{color: $green-color-05; background-color: $green-color-09; border: 1px solid $green-color-05;}
+}
+@mixin button-combination-06{
+  fill: $teal-color-05;
+  color: $teal-color-05;
+  background-color: $teal-color-09;
+  border: 1px solid $teal-color-05;
+  &:hover{
+      fill: $teal-color-04;
+      color: $teal-color-04;
+      background-color: $teal-color-08;
+      border: 1px solid $teal-color-04;
+  }
+  &:disabled{color: $teal-color-05; background-color: $teal-color-09; border: 1px solid $teal-color-05;}
+}
+@mixin button-combination-07{
+  fill: $cyan-color-05;
+  color: $cyan-color-05;
+  background-color: $cyan-color-09;
+  border: 1px solid $cyan-color-05;
+  &:hover{
+      fill: $cyan-color-04;
+      color: $cyan-color-04;
+      background-color: $cyan-color-08;
+      border: 1px solid $cyan-color-04;
+  }
+  &:disabled{color: $cyan-color-05; background-color: $cyan-color-09; border: 1px solid $cyan-color-05;}
+}
+@mixin button-combination-08{
+  fill: $blue-color-05;
+  color: $blue-color-05;
+  background-color: $blue-color-09;
+  border: 1px solid $blue-color-05;
+  &:hover{
+      fill: $blue-color-04;
+      color: $blue-color-04;
+      background-color: $blue-color-08;
+      border: 1px solid $blue-color-04;
+  }
+  &:disabled{color: $blue-color-05; background-color: $blue-color-09; border: 1px solid $blue-color-05;}
+}
+@mixin button-combination-09{
+  fill: $indigo-color-05;
+  color: $indigo-color-05;
+  background-color: $indigo-color-09;
+  border: 1px solid $indigo-color-05;
+  &:hover{
+      fill: $indigo-color-04;
+      color: $indigo-color-04;
+      background-color: $indigo-color-08;
+      border: 1px solid $indigo-color-04;
+  }
+  &:disabled{color: $indigo-color-05; background-color: $indigo-color-09; border: 1px solid $indigo-color-05;}
+}
+@mixin button-combination-10{
+  fill: $violet-color-05;
+  color: $violet-color-05;
+  background-color: $violet-color-09;
+  border: 1px solid $violet-color-05;
+  &:hover{
+      fill: $violet-color-04;
+      color: $violet-color-04;
+      background-color: $violet-color-08;
+      border: 1px solid $violet-color-04;
+  }
+  &:disabled{color: $violet-color-05; background-color: $violet-color-09; border: 1px solid $violet-color-05;}
+}
+@mixin button-combination-11{
+  fill: $grape-color-05;
+  color: $grape-color-05;
+  background-color: $grape-color-09;
+  border: 1px solid $grape-color-05;
+  &:hover{
+      fill: $grape-color-04;
+      color: $grape-color-04;
+      background-color: $grape-color-08;
+      border: 1px solid $grape-color-04;
+  }
+  &:disabled{color: $grape-color-05; background-color: $grape-color-09; border: 1px solid $grape-color-05;}
+}
+@mixin button-combination-12{
+  fill: $pink-color-05;
+  color: $pink-color-05;
+  background-color: $pink-color-09;
+  border: 1px solid $pink-color-05;
+  &:hover{
+      fill: $pink-color-04;
+      color: $pink-color-04;
+      background-color: $pink-color-08;
+      border: 1px solid $pink-color-04;
+  }
+  &:disabled{color: $pink-color-05; background-color: $pink-color-09; border: 1px solid $pink-color-05;}
+}
+@mixin button-combination-13{
+  fill: $gray-color-05;
+  color: $gray-color-05;
+  background-color: $gray-color-09;
+  border: 1px solid $gray-color-05;
+  &:hover{
+      fill: $gray-color-04;
+      color: $gray-color-04;
+      background-color: $gray-color-08;
+      border: 1px solid $gray-color-04;
+  }
+  &:disabled{color: $gray-color-05; background-color: $gray-color-09; border: 1px solid $gray-color-05;}
+}
+// ///// 배경색 없는 버튼 01 /////
+@mixin button-nobg-01-01{
+  color: $red-color-05;
+  &:hover{
+      color: $red-color-04;
+      > svg{fill: $red-color-04}
+  }
+  &:disabled{
+      color: $red-color-05;
+      > svg{fill: $red-color-05}
+  }
+  > svg{fill: $red-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-01-02{
+  color: $orange-color-05;
+  &:hover{
+      color: $orange-color-04;
+      > svg{fill: $orange-color-04}
+  }
+  &:disabled{
+      color: $orange-color-05;
+      > svg{fill: $orange-color-05}
+  }
+  > svg{fill: $orange-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-01-03{
+  color: $yellow-color-05;
+  &:hover{
+      color: $yellow-color-04;
+      > svg{fill: $yellow-color-04}
+  }
+  &:disabled{
+      color: $yellow-color-05;
+      > svg{fill: $yellow-color-05}
+  }
+  > svg{fill: $yellow-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-01-04{
+  color: $lime-color-05;
+  &:hover{
+      color: $lime-color-04;
+      > svg{fill: $lime-color-04}
+  }
+  &:disabled{
+      color: $lime-color-05;
+      > svg{fill: $lime-color-05}
+  }
+  > svg{fill: $lime-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-01-05{
+  color: $green-color-05;
+  &:hover{
+      color: $green-color-04;
+      > svg{fill: $green-color-04}
+  }
+  &:disabled{
+      color: $green-color-05;
+      > svg{fill: $green-color-05}
+  }
+  > svg{fill: $green-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-01-06{
+  color: $teal-color-05;
+  &:hover{
+      color: $teal-color-04;
+      > svg{fill: $teal-color-04}
+  }
+  &:disabled{
+      color: $teal-color-05;
+      > svg{fill: $teal-color-05}
+  }
+  > svg{fill: $teal-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-01-07{
+  color: $cyan-color-05;
+  &:hover{
+      color: $cyan-color-04;
+      > svg{fill: $cyan-color-04}
+  }
+  &:disabled{
+      color: $cyan-color-05;
+      > svg{fill: $cyan-color-05}
+  }
+  > svg{fill: $cyan-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-01-08{
+  color: $blue-color-05;
+  &:hover{
+      color: $blue-color-04;
+      > svg{fill: $blue-color-04}
+  }
+  &:disabled{
+      color: $blue-color-05;
+      > svg{fill: $blue-color-05}
+  }
+  > svg{fill: $blue-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-01-09{
+  color: $indigo-color-05;
+  &:hover{
+      color: $indigo-color-04;
+      > svg{fill: $indigo-color-04}
+  }
+  &:disabled{
+      color: $indigo-color-05;
+      > svg{fill: $indigo-color-05}
+  }
+  > svg{fill: $indigo-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-01-10{
+  color: $violet-color-05;
+  &:hover{
+      color: $violet-color-04;
+      > svg{fill: $violet-color-04}
+  }
+  &:disabled{
+      color: $violet-color-05;
+      > svg{fill: $violet-color-05}
+  }
+  > svg{fill: $violet-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-01-11{
+  color: $grape-color-05;
+  &:hover{
+      color: $grape-color-04;
+      > svg{fill: $grape-color-04}
+  }
+  &:disabled{
+      color: $grape-color-05;
+      > svg{fill: $grape-color-05}
+  }
+  > svg{fill: $grape-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-01-12{
+  color: $pink-color-05;
+  &:hover{
+      color: $pink-color-04;
+      > svg{fill: $pink-color-04}
+  }
+  &:disabled{
+      color: $pink-color-05;
+      > svg{fill: $pink-color-05}
+  }
+  > svg{fill: $pink-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-01-13{
+  color: $gray-color-05;
+  &:hover{
+      color: $gray-color-04;
+      > svg{fill: $gray-color-04}
+  }
+  &:disabled{
+      color: $gray-color-05;
+      > svg{fill: $gray-color-05}
+  }
+  > svg{fill: $gray-color-05; margin-right: 10px;}
+}
+///// 배경색 없는 버튼 02 /////
+@mixin button-nobg-02-01{
+  &:hover{
+      > svg{fill: $red-color-04}
+  }
+  &:disabled{
+      > svg{fill: $red-color-05}
+  }
+  > svg{fill: $red-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-02-02{
+  &:hover{
+      > svg{fill: $orange-color-04}
+  }
+  &:disabled{
+      > svg{fill: $orange-color-05}
+  }
+  > svg{fill: $orange-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-02-03{
+  &:hover{
+      > svg{fill: $yellow-color-04}
+  }
+  &:disabled{
+      > svg{fill: $yellow-color-05}
+  }
+  > svg{fill: $yellow-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-02-04{
+  &:hover{
+      > svg{fill: $lime-color-04}
+  }
+  &:disabled{
+      > svg{fill: $lime-color-05}
+  }
+  > svg{fill: $lime-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-02-05{
+  &:hover{
+      > svg{fill: $green-color-04}
+  }
+  &:disabled{
+      > svg{fill: $green-color-05}
+  }
+  > svg{fill: $green-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-02-06{
+  &:hover{
+      > svg{fill: $teal-color-04}
+  }
+  &:disabled{
+      > svg{fill: $teal-color-05}
+  }
+  > svg{fill: $teal-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-02-07{
+  &:hover{
+      > svg{fill: $cyan-color-04}
+  }
+  &:disabled{
+      > svg{fill: $cyan-color-05}
+  }
+  > svg{fill: $cyan-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-02-08{
+  &:hover{
+      > svg{fill: $blue-color-04}
+  }
+  &:disabled{
+      > svg{fill: $blue-color-05}
+  }
+  > svg{fill: $blue-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-02-09{
+  &:hover{
+      > svg{fill: $indigo-color-04}
+  }
+  &:disabled{
+      > svg{fill: $indigo-color-05}
+  }
+  > svg{fill: $indigo-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-02-10{
+  &:hover{
+      > svg{fill: $violet-color-04}
+  }
+  &:disabled{
+      > svg{fill: $violet-color-05}
+  }
+  > svg{fill: $violet-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-02-11{
+  &:hover{
+      > svg{fill: $grape-color-04}
+  }
+  &:disabled{
+      > svg{fill: $grape-color-05}
+  }
+  > svg{fill: $grape-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-02-12{
+  &:hover{
+      > svg{fill: $pink-color-04}
+  }
+  &:disabled{
+      > svg{fill: $pink-color-05}
+  }
+  > svg{fill: $pink-color-05; margin-right: 10px;}
+}
+@mixin button-nobg-02-13{
+  &:hover{
+      > svg{fill: $gray-color-04}
+  }
+  &:disabled{
+      > svg{fill: $gray-color-05}
+  }
+  > svg{fill: $gray-color-05; margin-right: 10px;}
+}
+////////////////////////////// CHECKBOX //////////////////////////////
+@mixin checkbox-label{
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 20px;
+  font-size: $text-small;
+  line-height: 20px;
+  padding-left: 30px;
+  cursor: pointer;
+}
+@mixin checkbox-shape-bg{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  background-color: $white;
+  border: $border-solid-01;
+  border-radius: 3px;
+}
+@mixin checkbox-shape-element{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+}
+////////////////////////////// DIGIT //////////////////////////////
+@mixin digit{
+  display: flex;
+  justify-content: center;
+  > li{
+      margin-right: 2px !important;
+      &:last-child{margin-right: 0 !important;}
+      > a{
+          display: inline-block;
+          width: 36px;
+          height: 36px;
+          font-size: $text-small;
+          text-align: center;
+          line-height: 34px;
+          border-radius: 4px;
+          &.active{border: 1px solid $text-color-01;}
+          &.first-page{
+              > svg{width: 10px;}
+          }
+          &.previous-page{
+              > svg{width: 6px;}
+          }
+          &.next-page{
+              > svg{width: 6px;}
+          }
+          &.last-page{
+              > svg{width: 10px;}
+          }
+          &:hover{background-color: $gray-color-10;}
+          &:focus{background-color: $gray-color-10; outline: 2px solid $blue-color-08;}
+          > svg{fill: $text-color-01; height: 11px;}
+      }
+  }
+}
+////////////////////////////// INPUT //////////////////////////////
+@mixin input-3x-small{
+  height: $height-3x-small;
+  font-size: $text-2x-small;
+  border-radius: 2px;
+  padding: 0 4px;
+  &:required{
+      + .required-text{
+          font-size: $text-2x-small;
+          &:before{width: 12px; height: 10px;}
+      }
+  }
+}
+@mixin input-2x-small{
+  height: $height-2x-small;
+  font-size: $text-x-small;
+  border-radius: 4px;
+  padding: 0 8px;
+  &:required{
+      + .required-text{
+          font-size: $text-2x-small;
+          &:before{width: 12px; height: 10px;}
+      }
+  }
+}
+@mixin input-x-small{
+  height: $height-x-small;
+  font-size: $text-x-small;
+  border-radius: 4px;
+  padding: 0 8px;
+  &:required{
+      + .required-text{
+          font-size: $text-2x-small;
+          &:before{width: 12px; height: 10px;}
+      }
+  }
+}
+@mixin input-small{
+  height: $height-small;
+  font-size: $text-x-small;
+  border-radius: 4px;
+  padding: 0 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-2x-small;
+          &:before{width: 12px; height: 10px;}
+      }
+  }
+}
+@mixin input-medium{
+  height: $height-medium;
+  font-size: $text-x-small;
+  border-radius: 4px;
+  padding: 0 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-2x-small;
+          &:before{width: 12px; height: 10px;}
+      }
+  }
+}
+@mixin input-large{
+  height: $height-large;
+  font-size: $text-small;
+  border-radius: 6px;
+  padding: 0 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-x-small;
+          &:before{width: 14px; height: 12px;}
+      }
+  }
+}
+@mixin input-x-large{
+  height: $height-x-large;
+  font-size: $text-small;
+  border-radius: 6px;
+  padding: 0 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-x-small;
+          &:before{width: 14px; height: 12px;}
+      }
+  }
+}
+@mixin input-2x-large{
+  height: $height-2x-large;
+  font-size: $text-small;
+  border-radius: 6px;
+  padding: 0 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-x-small;
+          &:before{width: 14px; height: 12px;}
+      }
+  }
+}
+@mixin input-3x-large{
+  height: $height-3x-large;
+  font-size: $text-medium;
+  border-radius: 8px;
+  padding: 0 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-small;
+          &:before{width: 16px; height: 14px;}
+      }
+  }
+}
+////////////////////////////// MODALS //////////////////////////////
+@mixin opaque-bg{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+///// 팝업창 /////
+@mixin popup-window{
+  width: 300px;
+  background-color: $white;
+  border: $border-solid-01;
+  border-radius: 8px;
+  @include position-center;
+  @include box-shadow-03;
+  > .popup-header{
+      font-size: $text-medium;
+      border-bottom: $border-solid-01;
+      > ul{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 14px 18px;
+          > li{
+              &.title{font-weight: 500;}
+              &.close{
+                  > .popup-close-button{
+                      position: relative;
+                      width: 26px;
+                      height: 26px;
+                      background-color: $background-color-01;
+                      border-radius: 50%;
+                      &:focus{outline: 2px solid $blue-color-08}
+                      > svg{
+                          width: 10px;
+                          height: 10px;
+                          fill: $text-color-03;
+                          @include position-center;
+                      }
+                  }
+              }
+          }
+      }
+  }
+  > .popup-main{
+      font-size: $text-medium;
+      color: $text-color-03;
+      line-height: $line-height-medium;
+      padding: 14px 18px;
+  }
+  > .popup-footer{
+      border-top: $border-solid-01;
+      > ul{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 14px 18px;
+      }
+  }
+  @media all and (min-width: $breakpoint-tablet){
+      width: 500px;
+      > .popup-header{
+          > ul{
+              padding: 15px 19px;
+              > li{
+                  &.close{
+                      > .popup-close-button{
+                          width: 30px;
+                          height: 30px;
+                          > svg{width: 12px; height: 12px;}
+                      }
+                  }
+              }
+          }
+      }
+      > .popup-main{padding: 15px 19px;}
+      > .popup-footer{
+          > ul{padding: 15px 19px;}
+      }
+  }
+  @media all and (min-width: $breakpoint-desktop){
+      width: 600px;
+      > .popup-header{
+          > ul{padding: 16px 20px;}
+      }
+      > .popup-main{padding: 16px 20px;}
+      > .popup-footer{
+          > ul{padding: 16px 20px;}
+      }
+  }
+}
+///// 확인창 /////
+@mixin confirm-window{
+  width: 300px;
+  background-color: $white;
+  border: $border-solid-01;
+  border-radius: 8px;
+  padding: 20px;
+  @include position-center;
+  @include box-shadow-03;
+  > ul{
+      &.confirm-text-wrap{
+          > li{
+              line-height: $line-height-medium;
+              margin-bottom: 14px;
+              &:last-child{margin-bottom: 0;}
+              &.confirm-title{font: {size: $text-medium; weight: 500;}}
+              &.confirm-guide{
+                  font-size: $text-small;
+                  color: $text-color-03;
+                  > a{
+                      text-decoration: underline;
+                      color: $text-color-03;
+                      &:focus{color: $blue-color-05; outline: 2px solid $blue-color-08;}
+                  }
+              }
+          }
+      }
+      &.confirm-button-wrap{
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+          > li{
+              margin-right: 10px;
+              &:last-child{margin-right: 0;}
+          }
+      }
+  }
+  @media all and (min-width: $breakpoint-tablet){
+      width: 500px;
+      padding: 24px;
+      > ul{
+          &.confirm-text-wrap{
+              > li{margin-bottom: 14px;}
+          }
+          &.confirm-button-wrap{margin-top: 24px;}
+      }
+  }
+  @media all and (min-width: $breakpoint-desktop){
+      width: auto;
+      max-width: 600px;
+      padding: 30px;
+      > ul{
+          &.confirm-button-wrap{margin-top: 30px;}
+      }
+  }
+}
+////////////////////////////// POSITION //////////////////////////////
+@mixin position-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+////////////////////////////// RADIO //////////////////////////////
+@mixin radio-label{
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 18px;
+  font-size: $text-small;
+  line-height: 20px;
+  padding-left: 30px;
+  cursor: pointer;
+}
+@mixin radio-shape-bg{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: $white;
+  border: $border-solid-01;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+@mixin radio-shape-element{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+////////////////////////////// SELECT //////////////////////////////
+@mixin select-3x-small{
+  height: $height-3x-small;
+  font-size: $text-2x-small;
+  background-position: calc(100% - 4px) center;
+  background-size: auto 6px;
+  border-radius: 2px;
+  padding: 0 4px;
+  &:required{
+      + .required-text{
+          font-size: $text-2x-small;
+          &:before{width: 12px; height: 10px;}
+      }
+  }
+}
+@mixin select-2x-small{
+  height: $height-2x-small;
+  font-size: $text-x-small;
+  background-position: calc(100% - 8px) center;
+  background-size: auto 6px;
+  border-radius: 4px;
+  padding: 0 8px;
+  &:required{
+      + .required-text{
+          font-size: $text-2x-small;
+          &:before{width: 12px; height: 10px;}
+      }
+  }
+}
+@mixin select-x-small{
+  height: $height-x-small;
+  font-size: $text-x-small;
+  background-position: calc(100% - 8px) center;
+  background-size: auto 6px;
+  border-radius: 4px;
+  padding: 0 8px;
+  &:required{
+      + .required-text{
+          font-size: $text-2x-small;
+          &:before{width: 12px; height: 10px;}
+      }
+  }
+}
+@mixin select-small{
+  height: $height-small;
+  font-size: $text-x-small;
+  background-position: calc(100% - 12px) center;
+  background-size: auto 6px;
+  border-radius: 4px;
+  padding: 0 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-2x-small;
+          &:before{width: 12px; height: 10px;}
+      }
+  }
+}
+@mixin select-medium{
+  height: $height-medium;
+  font-size: $text-x-small;
+  background-position: calc(100% - 12px) center;
+  background-size: auto 6px;
+  border-radius: 4px;
+  padding: 0 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-2x-small;
+          &:before{width: 12px; height: 10px;}
+      }
+  }
+}
+@mixin select-large{
+  height: $height-large;
+  font-size: $text-small;
+  background-position: calc(100% - 12px) center;
+  background-size: auto 8px;
+  border-radius: 6px;
+  padding: 0 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-x-small;
+          &:before{width: 14px; height: 12px;}
+      }
+  }
+}
+@mixin select-x-large{
+  height: $height-x-large;
+  font-size: $text-small;
+  background-position: calc(100% - 12px) center;
+  background-size: auto 8px;
+  border-radius: 6px;
+  padding: 0 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-x-small;
+          &:before{width: 14px; height: 12px;}
+      }
+  }
+}
+@mixin select-2x-large{
+  height: $height-2x-large;
+  font-size: $text-small;
+  background-position: calc(100% - 12px) center;
+  background-size: auto 8px;
+  border-radius: 6px;
+  padding: 0 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-x-small;
+          &:before{width: 14px; height: 12px;}
+      }
+  }
+}
+@mixin select-3x-large{
+  height: $height-x-large;
+  font-size: $text-medium;
+  background-position: calc(100% - 12px) center;
+  background-size: auto 8px;
+  border-radius: 8px;
+  padding: 0 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-small;
+          &:before{width: 16px; height: 14px;}
+      }
+  }
+}
+////////////////////////////// STATE BUTTON //////////////////////////////
+@mixin state-button-3x-small{
+  height: $height-3x-small;
+  font-size: $text-2x-small;
+  background-color: $background-color-01;
+  border-radius: 2px;
+  padding: 0 4px;
+  &.active{color: $white; background-color: $blue-color-05;}
+  &:hover{color: $blue-color-05; background-color: $background-color-02;}
+  &:focus{color: $blue-color-05; background-color: $background-color-02; outline: 2px solid $blue-color-08;}
+}
+@mixin state-button-2x-small{
+  height: $height-2x-small;
+  font-size: $text-x-small;
+  background-color: $background-color-01;
+  border-radius: 4px;
+  padding: 0 8px;
+  &.active{color: $white; background-color: $blue-color-05;}
+  &:hover{color: $blue-color-05; background-color: $background-color-02;}
+  &:focus{color: $blue-color-05; background-color: $background-color-02; outline: 2px solid $blue-color-08;}
+}
+@mixin state-button-x-small{
+  height: $height-x-small;
+  font-size: $text-x-small;
+  background-color: $background-color-01;
+  border-radius: 4px;
+  padding: 0 8px;
+  &.active{color: $white; background-color: $blue-color-05;}
+  &:hover{color: $blue-color-05; background-color: $background-color-02;}
+  &:focus{color: $blue-color-05; background-color: $background-color-02; outline: 2px solid $blue-color-08;}
+}
+@mixin state-button-small{
+  height: $height-small;
+  font-size: $text-x-small;
+  background-color: $background-color-01;
+  border-radius: 4px;
+  padding: 0 12px;
+  &.active{color: $white; background-color: $blue-color-05;}
+  &:hover{color: $blue-color-05; background-color: $background-color-02;}
+  &:focus{color: $blue-color-05; background-color: $background-color-02; outline: 2px solid $blue-color-08;}
+}
+@mixin state-button-medium{
+  height: $height-medium;
+  font-size: $text-x-small;
+  background-color: $background-color-01;
+  border-radius: 4px;
+  padding: 0 16px;
+  &.active{color: $white; background-color: $blue-color-05;}
+  &:hover{color: $blue-color-05; background-color: $background-color-02;}
+  &:focus{color: $blue-color-05; background-color: $background-color-02; outline: 2px solid $blue-color-08;}
+}
+@mixin state-button-large{
+  height: $height-large;
+  font-size: $text-small;
+  background-color: $background-color-01;
+  border-radius: 6px;
+  padding: 0 20px;
+  &.active{color: $white; background-color: $blue-color-05;}
+  &:hover{color: $blue-color-05; background-color: $background-color-02}
+  &:focus{color: $blue-color-05; background-color: $background-color-02; outline: 2px solid $blue-color-08;}
+}
+@mixin state-button-x-large{
+  height: $height-x-large;
+  font-size: $text-small;
+  background-color: $background-color-01;
+  border-radius: 6px;
+  padding: 0 24px;
+  &.active{color: $white; background-color: $blue-color-05;}
+  &:hover{color: $blue-color-05; background-color: $background-color-02;}
+  &:focus{color: $blue-color-05; background-color: $background-color-02; outline: 2px solid $blue-color-08;}
+}
+@mixin state-button-2x-large{
+  height: $height-2x-large;
+  font-size: $text-small;
+  background-color: $background-color-01;
+  border-radius: 6px;
+  padding: 0 28px;
+  &.active{color: $white; background-color: $blue-color-05;}
+  &:hover{color: $blue-color-05; background-color: $background-color-02;}
+  &:focus{color: $blue-color-05; background-color: $background-color-02; outline: 2px solid $blue-color-08;}
+}
+@mixin state-button-3x-large{
+  height: $height-3x-large;
+  font-size: $text-medium;
+  background-color: $background-color-01;
+  border-radius: 8px;
+  padding: 0 32px;
+  &.active{color: $white; background-color: $blue-color-05;}
+  &:hover{color: $blue-color-05; background-color: $background-color-02;}
+  &:focus{color: $blue-color-05; background-color: $background-color-02; outline: 2px solid $blue-color-08;}
+}
+////////////////////////////// TABLE //////////////////////////////
+@mixin table{
+  width: 100%;
+  font-size: $text-small;
+  text-align: center;
+  border-top: $border-solid-01;
+}
+@mixin table-title{background-color: $gray-color-10; border-bottom: $border-solid-01; padding: 14px 0;}
+@mixin table-body-row{
+  border-bottom: $border-solid-01;
+  > td{
+      > a{&:hover{color: $blue-color-05}}
+  }
+}
+////////////////////////////// TAB //////////////////////////////
+@mixin tablinks-3x-small{
+  height: $height-3x-small;
+  font-size: $text-2x-small;
+  background-color: $background-color-01;
+  border-radius: 2px;
+  padding: 0 4px;
+  &.active{color: $blue-color-05; background-color: $background-color-02; border-bottom: 2px solid $blue-color-05;}
+  &:hover, &:focus{color: $blue-color-05; background-color: $background-color-02;}
+  &:disabled{color: $text-color-01; background-color: $background-color-01; opacity: 0.38; cursor: default;}
+  &:focus{outline: 2px solid $blue-color-08}
+}
+@mixin tablinks-2x-small{
+  height: $height-2x-small;
+  font-size: $text-x-small;
+  background-color: $background-color-01;
+  border-radius: 4px;
+  padding: 0 8px;
+  &.active{color: $blue-color-05; background-color: $background-color-02; border-bottom: 2px solid $blue-color-05;}
+  &:hover, &:focus{color: $blue-color-05; background-color: $background-color-02;}
+  &:disabled{color: $text-color-01; background-color: $background-color-01; opacity: 0.38; cursor: default;}
+  &:focus{outline: 2px solid $blue-color-08}
+}
+@mixin tablinks-x-small{
+  height: $height-x-small;
+  font-size: $text-x-small;
+  background-color: $background-color-01;
+  border-radius: 4px;
+  padding: 0 8px;
+  &.active{color: $blue-color-05; background-color: $background-color-02; border-bottom: 2px solid $blue-color-05;}
+  &:hover, &:focus{color: $blue-color-05; background-color: $background-color-02;}
+  &:disabled{color: $text-color-01; background-color: $background-color-01; opacity: 0.38; cursor: default;}
+  &:focus{outline: 2px solid $blue-color-08}
+}
+@mixin tablinks-small{
+  height: $height-small;
+  font-size: $text-x-small;
+  background-color: $background-color-01;
+  border-radius: 4px;
+  padding: 0 12px;
+  &.active{color: $blue-color-05; background-color: $background-color-02; border-bottom: 2px solid $blue-color-05;}
+  &:hover, &:focus{color: $blue-color-05; background-color: $background-color-02;}
+  &:disabled{color: $text-color-01; background-color: $background-color-01; opacity: 0.38; cursor: default;}
+  &:focus{outline: 2px solid $blue-color-08}
+}
+@mixin tablinks-medium{
+  height: $height-medium;
+  font-size: $text-x-small;
+  background-color: $background-color-01;
+  border-radius: 4px;
+  padding: 0 16px;
+  &.active{color: $blue-color-05; background-color: $background-color-02; border-bottom: 2px solid $blue-color-05;}
+  &:hover, &:focus{color: $blue-color-05; background-color: $background-color-02;}
+  &:disabled{color: $text-color-01; background-color: $background-color-01; opacity: 0.38; cursor: default;}
+  &:focus{outline: 2px solid $blue-color-08}
+}
+@mixin tablinks-large{
+  height: $height-large;
+  font-size: $text-small;
+  background-color: $background-color-01;
+  border-radius: 6px;
+  padding: 0 20px;
+  &.active{color: $blue-color-05; background-color: $background-color-02; border-bottom: 2px solid $blue-color-05;}
+  &:hover, &:focus{color: $blue-color-05; background-color: $background-color-02;}
+  &:disabled{color: $text-color-01; background-color: $background-color-01; opacity: 0.38; cursor: default;}
+  &:focus{outline: 2px solid $blue-color-08}
+}
+@mixin tablinks-x-large{
+  height: $height-x-large;
+  font-size: $text-small;
+  background-color: $background-color-01;
+  border-radius: 6px;
+  padding: 0 24px;
+  &.active{color: $blue-color-05; background-color: $background-color-02; border-bottom: 2px solid $blue-color-05;}
+  &:hover, &:focus{color: $blue-color-05; background-color: $background-color-02;}
+  &:disabled{color: $text-color-01; background-color: $background-color-01; opacity: 0.38; cursor: default;}
+  &:focus{outline: 2px solid $blue-color-08}
+}
+@mixin tablinks-2x-large{
+  height: $height-2x-large;
+  font-size: $text-small;
+  background-color: $background-color-01;
+  border-radius: 6px;
+  padding: 0 28px;
+  &.active{color: $blue-color-05; background-color: $background-color-02; border-bottom: 2px solid $blue-color-05;}
+  &:hover, &:focus{color: $blue-color-05; background-color: $background-color-02;}
+  &:disabled{color: $text-color-01; background-color: $background-color-01; opacity: 0.38; cursor: default;}
+  &:focus{outline: 2px solid $blue-color-08}
+}
+@mixin tablinks-3x-large{
+  height: $height-3x-large;
+  font-size: $text-medium;
+  background-color: $background-color-01;
+  border-radius: 8px;
+  padding: 0 32px;
+  &.active{color: $blue-color-05; background-color: $background-color-02; border-bottom: 2px solid $blue-color-05;}
+  &:hover, &:focus{color: $blue-color-05; background-color: $background-color-02;}
+  &:disabled{color: $text-color-01; background-color: $background-color-01; opacity: 0.38; cursor: default;}
+  &:focus{outline: 2px solid $blue-color-08}
+}
+////////////////////////////// TEXTAREA //////////////////////////////
+@mixin textarea-3x-small{
+  font-size: $text-2x-small;
+  border-radius: 2px;
+  padding: 4px;
+  &:required{
+      + .required-text{
+          font-size: $text-2x-small;
+          &:before{width: 12px; height: 10px;}
+      }
+  }
+}
+@mixin textarea-2x-small{
+  font-size: $text-x-small;
+  border-radius: 4px;
+  padding: 8px;
+  &:required{
+      + .required-text{
+          font-size: $text-2x-small;
+          &:before{width: 12px; height: 10px;}
+      }
+  }
+}
+@mixin textarea-x-small{
+  font-size: $text-x-small;
+  border-radius: 4px;
+  padding: 8px;
+  &:required{
+      + .required-text{
+          font-size: $text-2x-small;
+          &:before{width: 12px; height: 10px;}
+      }
+  }
+}
+@mixin textarea-small{
+  font-size: $text-x-small;
+  border-radius: 4px;
+  padding: 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-2x-small;
+          &:before{width: 12px; height: 10px;}
+      }
+  }
+}
+@mixin textarea-medium{
+  font-size: $text-x-small;
+  border-radius: 4px;
+  padding: 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-2x-small;
+          &:before{width: 12px; height: 10px;}
+      }
+  }
+}
+@mixin textarea-large{
+  font-size: $text-small;
+  border-radius: 6px;
+  padding: 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-x-small;
+          &:before{width: 14px; height: 12px;}
+      }
+  }
+}
+@mixin textarea-x-large{
+  font-size: $text-small;
+  border-radius: 6px;
+  padding: 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-x-small;
+          &:before{width: 14px; height: 12px;}
+      }
+  }
+}
+@mixin textarea-2x-large{
+  font-size: $text-small;
+  border-radius: 6px;
+  padding: 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-x-small;
+          &:before{width: 14px; height: 12px;}
+      }
+  }
+}
+@mixin textarea-3x-large{
+  font-size: $text-medium;
+  border-radius: 8px;
+  padding: 12px;
+  &:required{
+      + .required-text{
+          font-size: $text-small;
+          &:before{width: 16px; height: 14px;}
+      }
+  }
+}
+////////////////////////////// TOGGLE //////////////////////////////
+@mixin toggle-label{
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  font-size: $text-small;
+  line-height: 20px;
+  padding-left: 42px;
+  cursor: pointer;
+}
+@mixin toggle-bg{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 32px;
+  height: 20px;
+  background-color: $white;
+  border: $border-solid-01;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+@mixin toggle-element{
+  content: "";
+  position: absolute;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background-color: $gray-color-08;
+  border-radius: 50%;
+  cursor: pointer;
+  @include transition-01;
+}
+////////////////////////////// TRANSITION //////////////////////////////
+@mixin transition-01{
+  -webkit-transition: all 0.2s linear;
+     -moz-transition: all 0.2s linear;
+       -o-transition: all 0.2s linear;
+          transition: all 0.2s linear;
+}
