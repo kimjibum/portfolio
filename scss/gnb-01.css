@@ -131,23 +131,11 @@ header > .menu-wrap > ul > li > a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 420px;
+  align-items: center;
 }
-.article-wrap > .article-01 {
-  width: 100%;
+.article-wrap > article {
+  width: 1140px;
 }
-.article-wrap > .article-01 > img {
-  width: 100%;
-}
-.article-wrap > .article-02 {
-  width: 100%;
-}
-.article-wrap > .article-02 > img {
-  width: 100%;
-}
-.article-wrap > .article-03 {
-  width: 100%;
-}
-.article-wrap > .article-03 > img {
+.article-wrap > article > img {
   width: 100%;
 }/*# sourceMappingURL=gnb-01.css.map */

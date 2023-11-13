@@ -18,9 +18,9 @@
         <h2 class="title"></h2>
         <section class="menu-wrap">
           <ul>
-            <li @click="move01"><a href="#">01. donkey express</a></li>
-            <li><a href="#">02. R-force</a></li>
-            <li><a href="#">03. SaaS develope</a></li>
+            <li onclick="move01()"><a href="#">01. donkey express</a></li>
+            <li onclick="move02()"><a href="#">02. R-force</a></li>
+            <li onclick="move03()"><a href="#">03. SaaS develope</a></li>
           </ul>
         </section>
       </header>
@@ -38,24 +38,28 @@
     </section>
     <section class="article-wrap">
       <article class="article-01">
-        <img src="../img/01.png" alt="">
+        <img src="../img/01.png" alt="산티아고 순례길 이동 앱">
       </article>
       <article class="article-02">
-        <img src="../img/02.png" alt="">
+        <img src="../img/02.png" alt="예비군 앱">
       </article>
       <article class="article-03">
-        <img src="../img/03.png" alt="">
+        <img src="../img/03.png" alt="SaaS전환">
       </article>
     </section>
   </section>
 </body>
 </html>
-<script>
+<script type="text/javascript">
   const location01 = document.querySelector('.article-01').offsetTop;
   const location02 = document.querySelector('.article-02').offsetTop;
   const location03 = document.querySelector('.article-03').offsetTop;
-  console.log(location01)
-  console.log(location02)
-  console.log(location03)
-  const move01 = () =>  window.scrollTo({top:location01, behavior:'smooth'});
+
+  console.log(location01);
+  console.log(location02);
+  console.log(location03);
+
+  const move01 = () => window.scrollTo({top:location01, behavior:'smooth'});
+  const move02 = () => window.scrollTo({top:location02, behavior:'smooth'});
+  const move03 = () => window.scrollTo({top:location03, behavior:'smooth'});
 </script>

@@ -128,21 +128,9 @@ header{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 420px;
-  > .article-01{
-    width: 100%;
-    > img{
-      width: 100%;
-    }
-  }
-  > .article-02{
-    width: 100%;
-    > img{
-      width: 100%;
-    }
-  }
-  > .article-03{
-    width: 100%;
+  align-items: center;
+  > article{
+    width: 1140px;
     > img{
       width: 100%;
     }
