@@ -18,7 +18,7 @@
         <h2 class="title"></h2>
         <section class="menu-wrap">
           <ul>
-            <li><a href="#">01. donkey express</a></li>
+            <li @click="move01"><a href="#">01. donkey express</a></li>
             <li><a href="#">02. R-force</a></li>
             <li><a href="#">03. SaaS develope</a></li>
           </ul>
@@ -50,3 +50,12 @@
   </section>
 </body>
 </html>
+<script>
+  const location01 = document.querySelector('.article-01').offsetTop;
+  const location02 = document.querySelector('.article-02').offsetTop;
+  const location03 = document.querySelector('.article-03').offsetTop;
+  console.log(location01)
+  console.log(location02)
+  console.log(location03)
+  const move01 = () =>  window.scrollTo({top:location01, behavior:'smooth'});
+</script>
