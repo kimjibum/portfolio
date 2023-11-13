@@ -16,7 +16,7 @@ header {
 header > .title {
   width: 253px;
   height: 80px;
-  background: url(../img/title.svg) no-repeat center center/contain;
+  background: url(img/title.svg) no-repeat center center/contain;
 }
 header > .menu-wrap {
   width: 400px;
@@ -52,12 +52,12 @@ header > .menu-wrap > ul > li > a:hover {
   width: 100%;
   height: 1080px;
   position: relative;
-  background: url(../img/content-bg.svg) no-repeat center center/cover;
+  background: url(img/content-bg.svg) no-repeat center center/cover;
 }
 .main-cover > .content-wrap {
   width: 100%;
   height: 70%;
-  background: url(../img/content.svg) no-repeat center center/contain;
+  background: url(img/content.svg) no-repeat center center/contain;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -67,7 +67,7 @@ header > .menu-wrap > ul > li > a:hover {
   width: 100%;
 }
 .main-cover > .star-wrap > div {
-  background: url(../img/star.svg) no-repeat center center/contain;
+  background: url(img/star.svg) no-repeat center center/contain;
   width: 50px;
   height: 50px;
   position: absolute;
@@ -134,7 +134,7 @@ header > .menu-wrap > ul > li > a:hover {
   align-items: center;
 }
 .article-wrap > article {
-  width: 1140px;
+  width: 1400px;
 }
 .article-wrap > article > img {
   width: 100%;
