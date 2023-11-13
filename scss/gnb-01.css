@@ -129,6 +129,7 @@ header > .menu-wrap > ul > li > a:hover {
 
 .article-wrap {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 0 420px;
 }
@@ -136,5 +137,17 @@ header > .menu-wrap > ul > li > a:hover {
   width: 100%;
 }
 .article-wrap > .article-01 > img {
+  width: 100%;
+}
+.article-wrap > .article-02 {
+  width: 100%;
+}
+.article-wrap > .article-02 > img {
+  width: 100%;
+}
+.article-wrap > .article-03 {
+  width: 100%;
+}
+.article-wrap > .article-03 > img {
   width: 100%;
 }/*# sourceMappingURL=gnb-01.css.map */
