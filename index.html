@@ -14,6 +14,9 @@
 <body>
   <section>
     <section class="main-cover">
+      <section class="top-button">
+        <div>TOP</div>
+      </section>
       <header>
         <h2 class="title"></h2>
         <section class="menu-wrap">
@@ -24,7 +27,9 @@
           </ul>
         </section>
       </header>
-      <section class="content-wrap"></section>
+      <section class="content-wrap">
+        <img src="img/content.svg" alt="">
+      </section>
       <section class="star-wrap">
         <div class="star-01"></div>
         <div class="star-02"></div>
@@ -86,4 +91,10 @@
     window.scroll({ top: sectionTop, behavior:'smooth' });
   });
 });
+
+  const toTop = document.querySelector('.top-button');
+  toTop.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scroll({ top: 0, behavior:'smooth' });
+  })
 </script>

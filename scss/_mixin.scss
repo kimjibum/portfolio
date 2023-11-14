@@ -1700,3 +1700,9 @@
        -o-transition: all 0.2s linear;
           transition: all 0.2s linear;
 }
+
+@mixin tablet {
+  @media (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
