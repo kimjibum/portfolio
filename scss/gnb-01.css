@@ -181,19 +181,20 @@ header > .menu-wrap > ul > li > a {
 
 @media (max-width: 768px) {
   header {
-    padding: 20px 40px;
+    padding: 0;
+    padding-left: 24px;
   }
   header > .title {
-    width: 160px;
+    width: 100px;
   }
   header > .menu-wrap {
     display: none;
   }
   .main-cover > .content-wrap {
-    padding: 60px;
+    padding: 40px;
   }
   .main-cover > .content-wrap > img {
-    width: 80%;
+    width: 100%;
   }
   .article-wrap > article {
     width: 100%;

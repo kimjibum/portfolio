@@ -177,9 +177,10 @@ header{
 /////////////////////////
 @include tablet{
   header{
-    padding: 20px 40px;
+    padding: 0;
+    padding-left: 24px;
     > .title{
-      width: 160px;
+      width: 100px;
     }
     > .menu-wrap{
      display: none;
@@ -187,9 +188,9 @@ header{
   }
   .main-cover{
     > .content-wrap{
-      padding: 60px;
+      padding: 40px;
     > img{
-      width: 80%;
+      width: 100%;
     }
     }
   }
