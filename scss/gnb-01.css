@@ -61,11 +61,10 @@ header > .menu-wrap > ul > li > a {
   background: url(../img/content-bg.svg) no-repeat center center/cover;
 }
 .main-cover > .content-wrap {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 140px;
+  padding: 140px 0;
 }
 .main-cover > .content-wrap > img {
   width: 70%;

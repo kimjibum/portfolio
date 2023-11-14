@@ -57,11 +57,11 @@ header{
   position: relative;
   background: url(../img/content-bg.svg) no-repeat center center / cover;
   > .content-wrap{
-    width: 100%;
+    // width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 140px;
+    padding: 140px 0;
     > img{
       width: 70%;
     }
