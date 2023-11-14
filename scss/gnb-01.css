@@ -64,10 +64,10 @@ header > .menu-wrap > ul > li > a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 140px 0;
+  padding: 110px 0;
 }
 .main-cover > .content-wrap > img {
-  width: 70%;
+  width: 64%;
 }
 .main-cover > .star-wrap {
   width: 100%;
