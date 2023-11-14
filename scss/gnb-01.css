@@ -29,9 +29,18 @@ header > .menu-wrap {
 header > .menu-wrap > ul > li {
   cursor: pointer;
   margin-bottom: 40px;
+  padding: 12px 24px;
 }
 header > .menu-wrap > ul > li:last-child {
   margin-bottom: 0;
+}
+header > .menu-wrap > ul > li:hover {
+  border-radius: 300px;
+  background: linear-gradient(90deg, rgba(149, 164, 211, 0.2117647059) 0%, rgba(217, 217, 217, 0) 50%);
+}
+header > .menu-wrap > ul > li.active {
+  border-radius: 300px;
+  background: linear-gradient(90deg, rgba(149, 164, 211, 0.3019607843) 0%, rgba(217, 217, 217, 0) 50%);
 }
 header > .menu-wrap > ul > li > a {
   width: 100%;
@@ -40,11 +49,6 @@ header > .menu-wrap > ul > li > a {
   color: #95A4D3;
   font-size: 20px;
   font-family: "Poppins", sans-serif;
-  padding: 12px 24px;
-}
-header > .menu-wrap > ul > li > a:hover {
-  border-radius: 300px;
-  background: linear-gradient(90deg, rgba(149, 164, 211, 0.3019607843) 0%, rgba(217, 217, 217, 0) 70%);
 }
 
 .main-cover {
@@ -124,6 +128,34 @@ header > .menu-wrap > ul > li > a:hover {
   height: 20px;
   top: 50%;
   left: 6%;
+  animation: sparkle 0.5s infinite linear alternate;
+}
+.main-cover > .star-wrap > div.star-09 {
+  width: 20px;
+  height: 20px;
+  top: 70%;
+  left: 6%;
+  animation: sparkle 0.5s infinite linear alternate;
+}
+.main-cover > .star-wrap > div.star-10 {
+  width: 20px;
+  height: 20px;
+  top: 30%;
+  left: 4%;
+  animation: sparkle 0.5s infinite linear alternate;
+}
+.main-cover > .star-wrap > div.star-11 {
+  width: 20px;
+  height: 20px;
+  top: 70%;
+  left: 90%;
+  animation: sparkle 0.5s infinite linear alternate;
+}
+.main-cover > .star-wrap > div.star-12 {
+  width: 20px;
+  height: 20px;
+  top: 10%;
+  left: 94%;
   animation: sparkle 0.5s infinite linear alternate;
 }
 

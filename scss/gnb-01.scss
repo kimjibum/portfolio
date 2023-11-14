@@ -24,8 +24,17 @@ header{
       > li{
         cursor: pointer;
         margin-bottom: 40px;
+        padding: 12px 24px;
         &:last-child{
           margin-bottom: 0;
+        }
+        &:hover{
+          border-radius: 300px;
+          background: linear-gradient(90deg, #95a4d336 0%, rgba(217, 217, 217, 0.00) 50%);
+        }
+        &.active{
+          border-radius: 300px;
+          background: linear-gradient(90deg, #95a4d34d 0%, rgba(217, 217, 217, 0.00) 50%);
         }
         > a{
           width: 100%;
@@ -34,12 +43,6 @@ header{
           color: #95A4D3;
           font-size: 20px;
           font-family: 'Poppins', sans-serif;
-          padding: 12px 24px;
-          &:hover{
-            border-radius: 300px;
-            background: linear-gradient(90deg, #95a4d34d 0%, rgba(217, 217, 217, 0.00) 70%);
-            
-          }
         }
       }
     }
@@ -119,6 +122,34 @@ header{
         height: 20px;
         top: 50%;
         left: 6%;
+        animation: sparkle 0.5s infinite linear alternate;
+      }
+      &.star-09{
+        width: 20px;
+        height: 20px;
+        top: 70%;
+        left: 6%;
+        animation: sparkle 0.5s infinite linear alternate;
+      }
+      &.star-10{
+        width: 20px;
+        height: 20px;
+        top: 30%;
+        left: 4%;
+        animation: sparkle 0.5s infinite linear alternate;
+      }
+      &.star-11{
+        width: 20px;
+        height: 20px;
+        top: 70%;
+        left: 90%;
+        animation: sparkle 0.5s infinite linear alternate;
+      }
+      &.star-12{
+        width: 20px;
+        height: 20px;
+        top: 10%;
+        left: 94%;
         animation: sparkle 0.5s infinite linear alternate;
       }
     }
