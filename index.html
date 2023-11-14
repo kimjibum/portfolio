@@ -18,9 +18,9 @@
         <h2 class="title"></h2>
         <section class="menu-wrap">
           <ul>
-            <li onclick="move01()"><a href="#">01. donkey express</a></li>
-            <li onclick="move02()"><a href="#">02. R-force</a></li>
-            <li onclick="move03()"><a href="#">03. SaaS develope</a></li>
+            <li class="gnb_item"><a href="#">01. donkey express</a></li>
+            <li class="gnb_item"><a href="#">02. R-force</a></li>
+            <li class="gnb_item"><a href="#">03. SaaS develope</a></li>
           </ul>
         </section>
       </header>
@@ -50,16 +50,41 @@
   </section>
 </body>
 </html>
-<script type="text/javascript">
-  const location01 = document.querySelector('.article-01').offsetTop;
-  const location02 = document.querySelector('.article-02').offsetTop;
-  const location03 = document.querySelector('.article-03').offsetTop;
+<script>
+  // move01 = function () {
+  //   const location01 = document.querySelector('.article-01').offsetTop;
+  //   window.scrollTo({top:location01, behavior:'smooth'});
+  // };
+  // move02 = function () {
+  //   const location02 = document.querySelector('.article-02').offsetTop;
+  //   window.scrollTo({top:location02, behavior:'smooth'});
+  // };
+  // move03 = function () {
+  //   const location03 = document.querySelector('.article-03').offsetTop;
+  //   window.scrollTo({top:location03, behavior:'smooth'});
+  // };
 
-  console.log(location01);
-  console.log(location02);
-  console.log(location03);
+  // 1. 네비게이션 메뉴들을 querySelectorAll을 통해 변수에 담는다.
+  const gnbItems = document.querySelectorAll(".gnb_item");
+  // 2. 섹션들을 전부 querySelectorAll을 통해 변수에 담는다.
+  const sections = document.querySelectorAll("article");
 
-  const move01 = () => window.scrollTo({top:location01, behavior:'smooth'});
-  const move02 = () => window.scrollTo({top:location02, behavior:'smooth'});
-  const move03 = () => window.scrollTo({top:location03, behavior:'smooth'});
+  // 3. forEach 문을 통해 한번씩 순회한다.
+  // 이때 index도 같이 가져온다.
+  gnbItems.forEach((gnbItem, index) => {
+
+  //4. 네비게이션 메뉴에 클릭 이벤트를 준다.
+  gnbItem.addEventListener("click", (e) => {
+    // 5. 메뉴를 a 태그에 만들었기 때문에, 
+    // 태그의 기본 동작(링크 연결) 방지를 위해 preventDefault를 추가한다.
+    e.preventDefault();
+    
+    // 6. 섹션들 중 네비게이션 메뉴의 index 에 해당하는 섹션의 높이값을 구하고,
+    // 네비게이션 높이만큼 값을 빼준다.
+    const sectionTop = sections[index].offsetTop;
+    
+    // 7. 해당 위치로 스크롤을 이동시킨다.
+    window.scroll({ top: sectionTop, behavior:'smooth' });
+  });
+});
 </script>
