@@ -64,13 +64,10 @@
   const gnbItems = document.querySelectorAll(".gnb_item");
   const sections = document.querySelectorAll("article");
 
-  // const scroll = document.querySelector("#parallax__info .scroll span");
   window.addEventListener("scroll", () => {
     const scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
    
-     // forEach문 02
-     sections.forEach((element, index) => {
-      
+  sections.forEach((element, index) => {      
     if (scrollTop >= element.offsetTop - window.innerHeight / 2 - 500) {
         document.querySelectorAll("li").forEach((li) => {
         li.classList.remove("active");
@@ -87,13 +84,6 @@
     
     const sectionTop = sections[index].offsetTop;
     const buttonGroup = gnbItem.parentNode;
-    
-
-    // const active = buttonGroup.querySelector('.active')
-    // if(active) {
-    //   active.classList.remove('active');
-    // }
-    // e.currentTarget.classList.add('active');
     
       window.scroll({ top: sectionTop, behavior:'smooth' });
     });
