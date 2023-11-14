@@ -69,11 +69,11 @@
    
      // forEach문 02
      sections.forEach((element, index) => {
-        if (scrollTop >= element.offsetTop - window.innerHeight / 2) {
-          document.querySelectorAll("li").forEach((li) => {
-          li.classList.remove("active");
-          console.log(li.classList)
-        });
+      
+    if (scrollTop >= element.offsetTop - window.innerHeight / 2 - 500) {
+        document.querySelectorAll("li").forEach((li) => {
+        li.classList.remove("active");
+        console.log(li.classList)}); 
         document.querySelector(`li:nth-child(${index + 1})`).classList.add("active");
       } 
     });
