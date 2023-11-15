@@ -277,7 +277,7 @@ header{
         > path{
           stroke-dasharray: 900px;
           stroke-dashoffset: $test;
-          animation: ani1 10s infinite normal;
+          animation: none;
         }
       }
     }

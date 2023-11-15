@@ -278,7 +278,7 @@ header > .menu-wrap > ul > li > a {
   .main-cover > .content-wrap > .content-01 > svg > path {
     stroke-dasharray: 900px;
     stroke-dashoffset: 5400px;
-    animation: ani1 10s infinite normal;
+    animation: none;
   }
   .article-wrap > article {
     width: 100%;
