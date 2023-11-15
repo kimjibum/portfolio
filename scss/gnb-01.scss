@@ -211,6 +211,59 @@ header{
     }
   }
   .main-cover{
+    > .star-wrap{
+      > div{
+        width: 20px;
+        height: 20px;
+        &.star-02{
+          width: 30px;
+          height: 30px;
+        }
+        &.star-03{
+          width: 30px;
+          height: 30px;
+        }
+        &.star-04{
+          width: 20px;
+          height: 20px;
+        }
+        &.star-05{
+          width: 20px;
+          height: 20px;
+          top: 80%;
+          left: 10%;
+          animation: sparkle 1s infinite linear alternate;
+        }
+        &.star-06{
+          width: 10px;
+          height: 10px;
+        }
+        &.star-07{
+          width: 10px;
+          height: 10px;
+        }
+        &.star-08{
+          width: 10px;
+          height: 10px;
+        }
+        &.star-09{
+          width: 10px;
+          height: 10px;
+        }
+        &.star-10{
+          width: 10px;
+          height: 10px;
+        }
+        &.star-11{
+          width: 10px;
+          height: 10px;
+        }
+        &.star-12{
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
     > .content-wrap{
       padding: 20px;
     > img{

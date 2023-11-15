@@ -213,6 +213,57 @@ header > .menu-wrap > ul > li > a {
   header > .menu-wrap {
     display: none;
   }
+  .main-cover > .star-wrap > div {
+    width: 20px;
+    height: 20px;
+  }
+  .main-cover > .star-wrap > div.star-02 {
+    width: 30px;
+    height: 30px;
+  }
+  .main-cover > .star-wrap > div.star-03 {
+    width: 30px;
+    height: 30px;
+  }
+  .main-cover > .star-wrap > div.star-04 {
+    width: 20px;
+    height: 20px;
+  }
+  .main-cover > .star-wrap > div.star-05 {
+    width: 20px;
+    height: 20px;
+    top: 80%;
+    left: 10%;
+    animation: sparkle 1s infinite linear alternate;
+  }
+  .main-cover > .star-wrap > div.star-06 {
+    width: 10px;
+    height: 10px;
+  }
+  .main-cover > .star-wrap > div.star-07 {
+    width: 10px;
+    height: 10px;
+  }
+  .main-cover > .star-wrap > div.star-08 {
+    width: 10px;
+    height: 10px;
+  }
+  .main-cover > .star-wrap > div.star-09 {
+    width: 10px;
+    height: 10px;
+  }
+  .main-cover > .star-wrap > div.star-10 {
+    width: 10px;
+    height: 10px;
+  }
+  .main-cover > .star-wrap > div.star-11 {
+    width: 10px;
+    height: 10px;
+  }
+  .main-cover > .star-wrap > div.star-12 {
+    width: 10px;
+    height: 10px;
+  }
   .main-cover > .content-wrap {
     padding: 20px;
   }
