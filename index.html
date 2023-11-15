@@ -104,7 +104,7 @@
     const scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
    
   sections.forEach((element, index) => {      
-    if (scrollTop >= element.offsetTop - window.innerHeight / 2 - 500) {
+    if (scrollTop >= element.offsetTop - window.innerHeight / 2) {
         document.querySelectorAll("li").forEach((li) => {
         li.classList.remove("active");
         console.log(li.classList)}); 
