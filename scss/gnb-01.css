@@ -275,14 +275,6 @@ header > .menu-wrap > ul > li > a {
     top: 51.5%;
     left: 53.5%;
   }
-  .main-cover > .content-wrap > .content-01 > svg {
-    border: 1px solid red;
-  }
-  .main-cover > .content-wrap > .content-01 > svg > path {
-    stroke-dasharray: 900px;
-    stroke-dashoffset: 5400px;
-    animation: none;
-  }
   .article-wrap > article {
     width: 100%;
   }
