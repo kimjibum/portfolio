@@ -273,6 +273,13 @@ header{
       width: 50%;
       top: 51.5%;
       left: 53.5%;
+      > svg{
+        > path{
+          stroke-dasharray: 900px;
+          stroke-dashoffset: $test;
+          animation: ani1 10s infinite normal;
+        }
+      }
     }
     }
   }
