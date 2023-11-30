@@ -194,7 +194,6 @@ header > .menu-wrap > ul > li > a {
 }
 .article-wrap > article {
   width: 1140px;
-  display: flex;
 }
 .article-wrap > article > img {
   width: 100%;
@@ -279,7 +278,7 @@ header > .menu-wrap > ul > li > a {
   }
   .article-wrap > article {
     width: 100%;
-    border: 1px solid red;
+    display: flex;
   }
   .article-wrap > article > img {
     width: 100%;
