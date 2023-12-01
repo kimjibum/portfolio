@@ -316,3 +316,12 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
   background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
 }
+
+> .auther{
+  border: 1px solid red; 
+  color: #95A4D3; 
+  position: absolute; 
+  top: 0; 
+  left: 160px;
+  font-size: 20px;
+}
