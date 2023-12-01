@@ -48,11 +48,11 @@ header > .menu-wrap > ul > li:last-child {
 }
 header > .menu-wrap > ul > li:hover {
   border-radius: 300px;
-  background: linear-gradient(90deg, rgba(149, 164, 211, 0.2117647059) 0%, rgba(217, 217, 217, 0) 50%);
+  background: linear-gradient(90deg, rgba(149, 164, 211, 0.1843137255) 0%, rgba(217, 217, 217, 0) 50%);
 }
 header > .menu-wrap > ul > li.active {
   border-radius: 300px;
-  background: linear-gradient(90deg, rgba(149, 164, 211, 0.3019607843) 0%, rgba(217, 217, 217, 0) 50%);
+  background: linear-gradient(90deg, rgba(149, 164, 211, 0.1843137255) 0%, rgba(217, 217, 217, 0) 50%);
 }
 header > .menu-wrap > ul > li > a {
   width: 100%;
