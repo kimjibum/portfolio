@@ -194,7 +194,11 @@ header > .menu-wrap > ul > li > a {
 }
 .article-wrap > article {
   width: 1140px;
-  display: flex;
+  /* display: flex; */
+  > img {
+    margin-bottom: 24px;
+
+  }
 }
 .article-wrap > article > img {
   width: 100%;
