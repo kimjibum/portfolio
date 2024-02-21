@@ -9,6 +9,10 @@ $test: 5400px;
   0%{opacity: 0;}
   100%{opacity: 1;}
 }
+@keyframes scale{
+  0%{scale: 1;}
+  100%{scale: 1.1;}
+}
 body{
   background: #0F1424;
 }
@@ -188,9 +192,13 @@ header{
   align-items: center;
   > article{
     width: 1140px;
-    display: flex;
+    // display: flex;
     > img{
       width: 100%;
+      margin-bottom: 24px;
+      &:hover{
+        // animation: scale 0.5s infinite linear alternate;
+      }
     }
   }
 }
