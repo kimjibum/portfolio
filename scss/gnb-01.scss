@@ -286,6 +286,7 @@ header{
     > article{
       width: 100%;
       display: flex;
+      flex-direction: column;
       > img{
         width: 100%;
       }
