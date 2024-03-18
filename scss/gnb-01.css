@@ -42,7 +42,7 @@ header > .menu-wrap {
   width: 400px;
   position: fixed;
   top: 32%;
-  left: 136px;
+  left: 160px;
   transform: translate(0%, -32%);
   z-index: 1000;
 }
