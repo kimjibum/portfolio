@@ -28,7 +28,7 @@ body {
 }
 
 header {
-  padding: 80px 160px;
+  padding: 80px;
   position: absolute;
   top: 0;
   left: 0;
@@ -42,7 +42,7 @@ header > .menu-wrap {
   width: 400px;
   position: fixed;
   top: 32%;
-  left: 160px;
+  left: 80px;
   transform: translate(0%, -26%);
   z-index: 1000;
 }
