@@ -1,214 +1,749 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="scss/gnb-01.css">
-  <link rel="stylesheet" href="scss/base.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins&display=swap"
-    rel="stylesheet">
-  <title>김지범_Portfolio</title>
-  </style>
-</head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <title>여러 이름 입력</title>
+  <style>
+    :root {
+        /**?/
+      /* Festive palette */
+      --bg: #0b1220;
+      --bg-grad-1: #0b1220;
+      --bg-grad-2: #0f1d33;
+      --bg-grad-3: #122544;
+      --card: rgba(255, 255, 255, 0.9);
+      --text: #0f172a;
+      --muted: #6b7280;
+      --primary: #c81e1e;        /* holiday red */
+      --primary-600: #991b1b;
+      --accent: #0d9488;         /* pine green */
+      --gold: #f59e0b;           /* warm gold */
+      --border: rgba(15, 23, 42, 0.12);
+      --chip-bg: #fff7ed;        /* warm cream */
+      --chip-text: #b45309;      /* amber-700 */
+      --danger: #dc2626;
+      --glow: 0 8px 24px rgba(200, 30, 30, 0.25);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", Arial, "Apple SD Gothic Neo", "Nanum Gothic", "맑은 고딕", "Malgun Gothic", sans-serif;
+      background: radial-gradient(1200px 600px at 10% 0%, var(--bg-grad-2), transparent),
+                  radial-gradient(900px 500px at 100% 10%, var(--bg-grad-3), transparent),
+                  linear-gradient(180deg, var(--bg-grad-1), #0b1220);
+      color: var(--text);
+      min-height: 100vh;
+      position: relative;
+      -webkit-tap-highlight-color: transparent;
+    }
+    /* Snow overlay */
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-repeat: repeat;
+      mix-blend-mode: screen;
+      opacity: 0.35;
+      animation: snowA 16s linear infinite;
+    }
+    body::after {
+      opacity: 0.22;
+      animation: snowB 24s linear infinite reverse;
+    }
+    @keyframes snowA {
+      0% { background-position: 0 0, 0 0, 0 0; }
+      100% { background-position: 0 1000px, 0 600px, 0 400px; }
+    }
+    @keyframes snowB {
+      0% { background-position: 0 0, 0 0, 0 0; }
+      100% { background-position: 0 1200px, 0 800px, 0 500px; }
+    }
+    /* Create layered small dots as flakes using radial-gradients */
+    body::before {
+      background-image:
+        radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.9) 99%, transparent),
+        radial-gradient(2px 2px at 80px 120px, rgba(255,255,255,0.9) 99%, transparent),
+        radial-gradient(2px 2px at 200px 80px, rgba(255,255,255,0.9) 99%, transparent);
+      background-size: 200px 300px, 300px 400px, 400px 500px;
+    }
+    body::after {
+      background-image:
+        radial-gradient(1.5px 1.5px at 50px 60px, rgba(255,255,255,0.8) 99%, transparent),
+        radial-gradient(1.5px 1.5px at 150px 90px, rgba(255,255,255,0.8) 99%, transparent),
+        radial-gradient(1.5px 1.5px at 250px 140px, rgba(255,255,255,0.8) 99%, transparent);
+      background-size: 240px 320px, 320px 420px, 420px 560px;
+    }
+    .container {
+      max-width: 720px;
+      padding: 24px;
+      margin: 0 auto;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.10), 0 1px 0 rgba(255,255,255,0.4) inset;
+      backdrop-filter: saturate(120%) blur(6px);
+    }
+    h1 {
+      font-size: 22px;
+      margin: 0 0 16px;
+      color: #0f172a;
+    }
+    p.hint {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .input-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .input-row input[type="text"] {
+      flex: 1;
+      height: 40px;
+      padding: 0 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      color: #000;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      background: #ffffff;
+    }
+    .input-row input[type="text"]:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(200, 30, 30, 0.15);
+    }
+    .btn {
+      height: 40px;
+      padding: 0 14px;
+      border: 1px solid transparent;
+      background: linear-gradient(180deg, #ef4444, var(--primary));
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.02s ease, box-shadow 0.15s ease;
+      box-shadow: var(--glow);
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn.secondary {
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+      color: var(--primary);
+      border-color: rgba(15, 23, 42, 0.08);
+      box-shadow: 0 4px 12px rgba(15,23,42,0.06);
+    }
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+      min-height: 40px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      background: var(--chip-bg);
+      color: var(--chip-text);
+      border-radius: 999px;
+      border: 1px solid #fed7aa;
+      font-size: 13px;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset, 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .chip button {
+      all: unset;
+      width: 18px;
+      height: 18px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: #fee2e2;
+      color: #b91c1c;
+      cursor: pointer;
+      line-height: 1;
+      font-weight: 700;
+      box-shadow: 0 0 0 1px rgba(185,28,28,0.12) inset;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .error {
+      color: var(--danger);
+      font-size: 13px;
+      min-height: 18px;
+    }
+    .names-preview {
+      font-size: 14px;
+      color: #374151;
+    }
+    .names-preview code {
+      background: #f3f4f6;
+      padding: 2px 6px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+    .title-row {
+      margin-bottom: 12px;
+    }
+    .title-row input {
+      font-size: 15px;
+      height: 42px;
+      background: #ffffff;
+    }
+    /* A11y helper */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 1px, 1px);
+      white-space: nowrap;
+      border: 0;
+    }
 
-<body>
-  <section>
-    <section class="main-cover">
-      <section class="top-button">
-        <div>TOP</div>
-      </section>
-      <header>
-        <h2 class="title"></h2>
-        <section class="menu-wrap">
-          <ul>
-            <li class="gnb_item active"><a href="#">00. 김지범</a></li>
-            <li class="gnb_item"><a href="#">01. 부산소방차량관제시스템 고도화</a></li>
-            <li class="gnb_item"><a href="#">02. Saas 물류 디자인시스템</a></li>
-            <li class="gnb_item"><a href="#">03. 원티드 workflow 수정</a></li>
-            <li class="gnb_item"><a href="#">04. daily school</a></li>
-            <li class="gnb_item"><a href="#">05. donkey exporess</a></li>
-            <!-- <li class="gnb_item"><a href="#">06. 예비군앱 리디자인</a></li> -->
-            <!-- <li class="gnb_item"><a href="#">03. SaaS develope</a></li> -->
-            <!-- <li class="gnb_item"><a href="#"> @ 김 지범 = Kim + jibum > UX/UI Designer</a></li> -->
-          </ul>
-        </section>
-      </header>
-      <article class="content-wrap">
-        <!-- <section class="auther"
-          style="color: #95a4d3c2; position: absolute; bottom: 0; font-size: 16px; margin-bottom: 40px; left: 160px;">
-          @ 김 지범
-          = Kim + jibum
-          > UX/UI Designer
-        </section> -->
-        <img src="img/content-02.png" alt="">
-        <section class="content-01">
-          <svg width="100%" height="100%" viewBox="0 0 585 522" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M325.741 207.47C355.786 259.482 370.809 313.516 370.87 358.787C370.931 404.103 356.026 440.322 326.613 457.294C297.2 474.267 258.365 469.058 219.129 446.347C179.932 423.659 140.624 383.639 110.578 331.627C80.5327 279.615 65.5105 225.581 65.4495 180.31C65.3884 134.994 80.2932 98.7754 109.706 81.803C139.119 64.8306 177.954 70.0388 217.19 92.7498C256.387 115.438 295.695 155.458 325.741 207.47Z"
-              stroke="url(#paint0_linear_73_7784)" stroke-width="2.91151" />
-            <path
-              d="M400.544 164.306C425.765 207.967 438.348 253.327 438.366 291.326C438.384 329.37 425.833 359.719 401.176 373.947C376.52 388.174 343.947 383.864 310.991 364.826C278.074 345.811 245.062 312.239 219.841 268.578C194.619 224.917 182.036 179.557 182.018 141.558C182 103.515 194.551 73.1651 219.208 58.9374C243.864 44.7097 276.437 49.0204 309.393 68.0578C342.31 87.0729 375.322 120.645 400.544 164.306Z"
-              stroke="url(#paint1_linear_73_7784)" stroke-width="2.91151" />
-            <path
-              d="M468.622 125.022C488.216 158.939 497.962 194.176 497.942 223.683C497.923 253.235 488.134 276.727 469.046 287.742C449.958 298.756 424.708 295.482 399.092 280.723C373.515 265.987 347.856 239.933 328.263 206.015C308.669 172.097 298.923 136.861 298.943 107.353C298.962 77.8016 308.751 54.3091 327.839 43.2947C346.926 32.2803 372.177 35.5541 397.793 50.3129C423.37 65.0498 449.029 91.1037 468.622 125.022Z"
-              stroke="url(#paint2_linear_73_7784)" stroke-width="2.91151" />
-            <path
-              d="M514.008 98.832C528.107 123.239 535.09 148.588 535.045 169.8C535 191.055 527.924 207.845 514.288 215.714C500.653 223.582 482.566 221.311 464.126 210.723C445.724 200.156 427.25 181.437 413.151 157.031C399.052 132.624 392.069 107.275 392.115 86.0627C392.16 64.8081 399.236 48.0174 412.871 40.149C426.507 32.2806 444.594 34.5515 463.034 45.1397C481.436 55.7066 499.91 74.4255 514.008 98.832Z"
-              stroke="url(#paint3_linear_73_7784)" stroke-width="2.91151" />
-            <path
-              d="M547.628 79.4326C557.304 96.1835 562.071 113.571 562.018 128.098C561.966 142.667 557.092 154.054 547.863 159.379C538.635 164.704 526.332 163.229 513.681 155.99C501.067 148.772 488.385 135.952 478.709 119.202C469.032 102.451 464.265 85.0635 464.318 70.5365C464.371 55.9675 469.245 44.5807 478.473 39.2557C487.701 33.9306 500.005 35.4053 512.655 42.6441C525.269 49.862 537.951 62.6817 547.628 79.4326Z"
-              stroke="url(#paint4_linear_73_7784)" stroke-width="2.91151" />
-            <defs>
-              <linearGradient id="paint0_linear_73_7784" x1="103.737" y1="322.694" x2="321.363" y2="196.98"
-                gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" />
-                <stop offset="0.885417" stop-color="#1D1D1D" stop-opacity="0.114583" />
-                <stop offset="1" stop-color="white" stop-opacity="0" />
-              </linearGradient>
-              <linearGradient id="paint1_linear_73_7784" x1="213.892" y1="261.191" x2="397.067" y2="155.378"
-                gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" />
-                <stop offset="0.885417" stop-color="#1D1D1D" stop-opacity="0.114583" />
-                <stop offset="1" stop-color="white" stop-opacity="0" />
-              </linearGradient>
-              <linearGradient id="paint2_linear_73_7784" x1="323.356" y1="200.431" x2="466.199" y2="117.916"
-                gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" />
-                <stop offset="0.885417" stop-color="#1D1D1D" stop-opacity="0.114583" />
-                <stop offset="1" stop-color="white" stop-opacity="0" />
-              </linearGradient>
-              <linearGradient id="paint3_linear_73_7784" x1="409.261" y1="153.207" x2="512.612" y2="93.5051"
-                gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" />
-                <stop offset="0.885417" stop-color="#1D1D1D" stop-opacity="0.114583" />
-                <stop offset="1" stop-color="white" stop-opacity="0" />
-              </linearGradient>
-              <linearGradient id="paint4_linear_73_7784" x1="475.637" y1="116.795" x2="547.059" y2="75.5374"
-                gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" />
-                <stop offset="0.885417" stop-color="#1D1D1D" stop-opacity="0.114583" />
-                <stop offset="1" stop-color="white" stop-opacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </section>
-      </article>
-      <section class="star-wrap">
-        <div class="star-01"></div>
-        <div class="star-02"></div>
-        <div class="star-03"></div>
-        <div class="star-04"></div>
-        <div class="star-05"></div>
-        <div class="star-06"></div>
-        <div class="star-07"></div>
-        <div class="star-08"></div>
-        <div class="star-09"></div>
-        <div class="star-10"></div>
-        <div class="star-11"></div>
-        <div class="star-12"></div>
-      </section>
-    </section>
-    <section class="article-wrap">
-      <article class="article-01">
-        <img src="img/01.png" alt="">
-        <img src="img/02.png" alt="">
-        <img src="img/03.png" alt="">
-        <img src="img/04.png" alt="">
-        <img src="img/05.png" alt="">
-        <img src="img/06.png" alt="">
-        <img src="img/07.png" alt="">
-        <img src="img/08.png" alt="">
-        <img src="img/09.png" alt="">
-      </article>
-      <article class="article-02">
-        <img src="img/10.png" alt="">
-        <img src="img/11.png" alt="">
-        <img src="img/12.png" alt="">
-        <img src="img/13.png" alt="">
-        <img src="img/14.png" alt="">
-        <img src="img/15.png" alt="">
-        <img src="img/16.png" alt="">
-      </article>
-      <article class="article-03">
-        <img src="img/17.png" alt="">
-        <img src="img/18.png" alt="">
-        <img src="img/19.png" alt="">
-        <img src="img/20.png" alt="">
-        <img src="img/21.png" alt="">
-        <img src="img/22.png" alt="">
-        <img src="img/23.png" alt="">
-        <img src="img/24.png" alt="">
-      </article>
-      <article class="article-04">
-        <img src="img/25.png" alt="">
-        <img src="img/26.png" alt="">
-        <img src="img/27.png" alt="">
-        <img src="img/28.png" alt="">
-        <img src="img/29.png" alt="">
-        <img src="img/30.png" alt="">
-        <img src="img/31.png" alt="">
-        <img src="img/32.png" alt="">
-        <img src="img/33.png" alt="">
-        <img src="img/34.png" alt="">
-        <img src="img/35.png" alt="">
-        <img src="img/36.png" alt="">
-      </article>
-      <article class="article-05">
-        <img src="img/37.png" alt="">
-        <img src="img/38.png" alt="">
-        <img src="img/39.png" alt="">
-        <img src="img/40.png" alt="">
-        <img src="img/41.png" alt="">
-        <img src="img/42.png" alt="">
-        <img src="img/43.png" alt="">
-        <img src="img/44.png" alt="">
-        <img src="img/45.png" alt="">
-        <img src="img/46.png" alt="">
-        <img src="img/47.png" alt="">
-        <img src="img/48.png" alt="">
-      </article>
-    </section>
-  </section>
-</body>
-
-</html>
-<script>
-  const gnbItems = document.querySelectorAll(".gnb_item");
-  const sections = document.querySelectorAll("article");
-
-  window.addEventListener("scroll", () => {
-    const scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-
-    sections.forEach((element, index) => {
-      if (scrollTop >= element.offsetTop - window.innerHeight / 2) {
-        document.querySelectorAll("li").forEach((li) => {
-          li.classList.remove("active");
-          console.log(li.classList)
-        });
-        document.querySelector(`li:nth-child(${index + 1})`).classList.add("active");
+    /* ===== Mobile (<= 480px) optimizations ===== */
+    @media (max-width: 480px) {
+      .container {
+        padding: 16px;
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
       }
-    });
-  });
+      .card {
+        border-radius: 14px;
+        padding: 16px;
+      }
+      h1 {
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
+      p.hint {
+        font-size: 13px;
+      }
+      .input-row {
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .input-row input[type="text"] {
+        height: 44px;
+        font-size: 16px;
+      }
+      .btn {
+        height: 44px;
+        font-size: 15px;
+        padding: 0 12px;
+        border-radius: 10px;
+      }
+      .chips {
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .chip {
+        padding: 7px 10px;
+        font-size: 13px;
+      }
+      .chip button {
+        width: 20px;
+        height: 20px;
+      }
+      .footer {
+        gap: 8px;
+      }
+      .footer > div[style*="margin-left:auto"] {
+        width: 100%;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      #create-btn, #clear-btn {
+        width: 100%;
+      }
+      /* Ladder number bar: horizontal scroll with snap for many items */
+      #ladder-number-bar {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        display: grid !important;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(44px, 1fr);
+        gap: 8px;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 6px;
+        margin-bottom: 8px !important;
+      }
+      #ladder-number-bar .btn {
+        min-width: 44px;
+        scroll-snap-align: start;
+      }
+      .names-preview {
+        font-size: 13px;
+      }
+      /* Lighter snow on mobile for performance */
+      body::before { opacity: 0.22; }
+      body::after { opacity: 0.15; }
+    }
 
-  gnbItems.forEach((gnbItem, index) => {
-    gnbItem.addEventListener("click", (e) => {
+    /* Reduced motion: disable snow animation */
+    @media (prefers-reduced-motion: reduce) {
+      body::before, body::after {
+        animation: none !important;
+      }
+    }
+  </style>
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+  <div class="container">
+    <div class="card" role="form" aria-labelledby="title">
+      <h1 id="title">이름을 여러 개 입력하세요</h1>
+      <p class="hint">엔터(또는 쉼표 ,)로 추가할 수 있고, 추가 후 칩을 눌러 삭제할 수 있어요.</p>
 
-      e.preventDefault();
+      <div class="input-row title-row">
+        <label for="result-title-input" class="sr-only" aria-hidden="true">결과 제목</label>
+        <input id="result-title-input" type="text" placeholder="결과 화면 제목 (예: 2025 약속의 날)">
+      </div>
 
-      const sectionTop = sections[index].offsetTop;
-      const buttonGroup = gnbItem.parentNode;
+      <div class="input-row">
+        <label for="name-input" class="sr-only" aria-hidden="true">이름 입력</label>
+        <input id="name-input" type="text" placeholder="예: 김지범" autocomplete="off" aria-label="이름 입력">
+        <button id="add-btn" class="btn" type="button">추가</button>
+      </div>
 
-      window.scroll({ top: sectionTop, behavior: 'smooth' });
-    });
-  });
+      <div id="chips" class="chips" aria-live="polite" aria-label="입력된 이름 목록"></div>
+      <div class="footer">
+        <div class="error" id="error" role="alert" aria-live="assertive"></div>
+        <div style="display:flex; gap:8px; margin-left:auto;">
+          <button id="create-btn" class="btn" type="button">생성하기</button>
+          <button id="clear-btn" class="btn secondary" type="button">모두 지우기</button>
+        </div>
+      </div>
+      <div class="names-preview" id="preview" style="margin-top:12px;"></div>
+    </div>
+  </div>
 
-  const toTop = document.querySelector('.top-button');
-  toTop.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scroll({ top: 0, behavior: 'smooth' });
-  })
-</script>
+  <!-- 사다리타기 화면 -->
+  <div class="container" id="ladder-view" style="display:none;">
+    <div class="card">
+      <h1>사다리타기</h1>
+      <p class="hint">번호를 눌러 결과를 확인하세요.</p>
+      <div id="ladder-title" class="ladder-title" style="font-weight:700; font-size:18px; margin: 6px 0 6px; color:#0f172a;"></div>
+      <div id="ladder-area" style="width:100%; overflow:auto;">
+        <canvas id="ladder-canvas" width="680" height="420" style="display:none;"></canvas>
+      </div>
+      <div id="ladder-number-bar" style="display:flex; gap:8px; flex-wrap:wrap; margin:12px 0;"></div>
+      <div class="footer" style="margin-top:12px;">
+        <div class="names-preview" id="ladder-names"></div>
+        <div style="display:flex; gap:8px; margin-left:auto;">
+          <button id="ladder-run" class="btn" type="button" style="display:none;">시작</button>
+          <button id="ladder-back" class="btn secondary" type="button">뒤로가기</button>
+        </div>
+      </div>
+      <div class="names-preview" id="ladder-result" style="margin-top:12px; font-size:16px;"></div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const input = document.getElementById('name-input');
+      const addBtn = document.getElementById('add-btn');
+      const chips = document.getElementById('chips');
+      const errorEl = document.getElementById('error');
+      const clearBtn = document.getElementById('clear-btn');
+      const createBtn = document.getElementById('create-btn');
+      const preview = document.getElementById('preview');
+      const ladderView = document.getElementById('ladder-view');
+      const ladderCanvas = document.getElementById('ladder-canvas');
+      const ladderRunBtn = document.getElementById('ladder-run');
+      const ladderBackBtn = document.getElementById('ladder-back');
+      const ladderNamesEl = document.getElementById('ladder-names');
+      const ladderResultEl = document.getElementById('ladder-result');
+      const formView = document.querySelector('.container'); // 첫 번째 컨테이너
+      // 드롭다운 제거 → 캔버스 클릭으로 번호 선택
+      const ladderNumberBarEl = document.getElementById('ladder-number-bar');
+      const BACK_PASSWORD = '0415';
+      const resultTitleInput = document.getElementById('result-title-input');
+      const ladderTitleEl = document.getElementById('ladder-title');
+
+      /** @type {string[]} */
+      let names = [];
+      /** @type {{row:number, col:number}[]} */
+      let rungs = [];
+      let ladderCols = 0;
+      let ladderRows = 0;
+      let selectedStartCol = null; // 사용자가 클릭한 시작 번호(컬럼)
+      let lastWinnerCol = null;    // 마지막으로 도착한 컬럼
+      let locksKey = '';           // 로컬 스토리지 잠금 키
+      const TITLE_KEY = 'ladderResultTitle';
+      const USER_LOCK_KEY = 'ladderUserLocked';
+
+      // 제목 초기값 로드
+      try {
+        const storedTitle = localStorage.getItem(TITLE_KEY);
+        if (storedTitle !== null && resultTitleInput) {
+          resultTitleInput.value = storedTitle;
+        }
+      } catch {}
+
+      function setError(message) {
+        errorEl.textContent = message || '';
+      }
+
+      function normalizeName(raw) {
+        return raw.replace(/\s+/g, ' ').trim();
+      }
+
+      function render() {
+        chips.innerHTML = '';
+        names.forEach((name, idx) => {
+          const chip = document.createElement('span');
+          chip.className = 'chip';
+          chip.setAttribute('data-index', String(idx));
+          chip.innerHTML = `<span>${escapeHtml(name)}</span><button type="button" aria-label="삭제">×</button>`;
+          chips.appendChild(chip);
+        });
+        preview.innerHTML = names.length
+          ? `현재 입력: <code>[${names.map(n => `"${escapeHtml(n)}"`).join(', ')}]</code>`
+          : '';
+      }
+
+      function escapeHtml(str) {
+        return str.replace(/[&<>"']/g, function(m) {
+          return ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#039;'
+          })[m];
+        });
+      }
+
+      function addName(rawInput) {
+        const candidate = normalizeName(rawInput);
+        if (!candidate) {
+          setError('빈 이름은 추가할 수 없어요.');
+          return;
+        }
+        if (names.includes(candidate)) {
+          setError('이미 추가된 이름이에요.');
+          return;
+        }
+        names.push(candidate);
+        setError('');
+        input.value = '';
+        render();
+        input.focus();
+      }
+
+      function addMultiple(rawText) {
+        // 쉼표 또는 줄바꿈으로 다중 분리
+        const parts = rawText.split(/[,\n]/g).map(normalizeName).filter(Boolean);
+        if (!parts.length) {
+          setError('추가할 이름이 없어요.');
+          return;
+        }
+        let added = 0;
+        parts.forEach(p => {
+          if (p && !names.includes(p)) {
+            names.push(p);
+            added += 1;
+          }
+        });
+        if (added === 0) {
+          setError('모두 이미 추가된 이름이에요.');
+        } else {
+          setError('');
+        }
+        input.value = '';
+        render();
+      }
+
+      function removeByIndex(index) {
+        if (index < 0 || index >= names.length) return;
+        names.splice(index, 1);
+        render();
+      }
+
+      addBtn.addEventListener('click', function() {
+        if (input.value.includes(',') || input.value.includes('\n')) {
+          addMultiple(input.value);
+        } else {
+          addName(input.value);
+        }
+      });
+
+      // 생성하기 → 사다리 화면
+      createBtn.addEventListener('click', function() {
+        if (names.length < 2) {
+          setError('사다리를 만들려면 최소 2명 이상 필요해요.');
+          input.focus();
+          return;
+        }
+        setError('');
+        switchToLadder();
+      });
+
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          if (input.value.includes(',') || input.value.includes('\n')) {
+            addMultiple(input.value);
+          } else {
+            addName(input.value);
+          }
+        }
+        // 백스페이스로 마지막 칩 삭제
+        if (e.key === 'Backspace' && input.value === '' && names.length) {
+          e.preventDefault();
+          names.pop();
+          render();
+        }
+      });
+
+      chips.addEventListener('click', function(e) {
+        const target = e.target;
+        if (target instanceof HTMLElement && target.tagName === 'BUTTON') {
+          const chip = target.closest('.chip');
+          if (!chip) return;
+          const idx = Number(chip.getAttribute('data-index'));
+          removeByIndex(idx);
+        }
+      });
+
+      clearBtn.addEventListener('click', function() {
+        names = [];
+        setError('');
+        render();
+        input.focus();
+      });
+
+      // 초기 렌더
+      render();
+
+      // ===== 사다리 로직 =====
+      function switchToLadder() {
+        // 첫 번째 컨테이너(formView)는 첫 번째 .container 이므로, ladderView와 구분해서 토글
+        if (formView && ladderView) {
+          formView.style.display = 'none';
+          ladderView.style.display = '';
+        }
+        // 안내 문구
+        ladderNamesEl.innerHTML = '번호를 클릭하여 결과를 확인하세요.';
+        ladderResultEl.textContent = '';
+        selectedStartCol = null;
+        lastWinnerCol = null;
+        // 제목 로드 및 표시
+        const currentTitle = resultTitleInput ? resultTitleInput.value.trim() : '';
+        ladderTitleEl.textContent = currentTitle;
+        try { localStorage.setItem(TITLE_KEY, currentTitle); } catch {}
+        buildLadder();
+        renderNumberBar();
+        if (isUserLocked()) {
+          ladderResultEl.textContent = '이미 결과를 확인하셨습니다. 다시 선택할 수 없습니다.';
+        }
+      }
+
+      function backToForm() {
+        if (formView && ladderView) {
+          ladderView.style.display = 'none';
+          formView.style.display = '';
+        }
+        clearLocks();
+        locksKey = '';
+        selectedStartCol = null;
+        lastWinnerCol = null;
+        renderNumberBar();
+        ladderResultEl.textContent = '';
+      }
+
+      ladderBackBtn.addEventListener('click', function() {
+        const inputPw = prompt('뒤로 가기 비밀번호를 입력하세요.');
+        if (inputPw === BACK_PASSWORD) {
+          backToForm();
+        } else {
+          ladderResultEl.textContent = '비밀번호가 올바르지 않습니다.';
+        }
+      });
+      // 다시 만들기 버튼 제거됨: 필요 시 생성 화면에서 다시 생성하기를 눌러 사다리를 새로 만들 수 있습니다.
+
+      function buildLadder() {
+        const numCols = names.length;
+        const numRows = Math.max(6, Math.min(16, numCols * 4));
+        ladderCols = numCols;
+        ladderRows = numRows;
+        rungs = [];
+        // 각 행마다 인접하지 않게 가로줄 생성
+        for (let row = 0; row < numRows; row++) {
+          let prevPlacedAt = -2;
+          for (let col = 0; col < numCols - 1; col++) {
+            const place = Math.random() < 0.35 && (col - prevPlacedAt > 1);
+            if (place) {
+              rungs.push({ row, col });
+              prevPlacedAt = col;
+            }
+          }
+        }
+        // 캔버스 크기 조정 (반응형 폭 기준으로 높이 비율 설정)
+        const pxPerCol = 100;
+        const pxPerRow = 24;
+        const width = Math.max(360, (numCols - 1) * pxPerCol + 120);
+        const height = Math.max(320, numRows * pxPerRow + 120);
+        ladderCanvas.width = width;
+        ladderCanvas.height = height;
+      }
+
+      // 캔버스 렌더링은 비활성화 (사다리 비노출)
+
+      function traverse(startCol) {
+        let current = startCol;
+        for (let row = 0; row < ladderRows; row++) {
+          // 왼쪽 가로줄 확인
+          const hasLeft = rungs.some(r => r.row === row && r.col === current - 1);
+          if (hasLeft) {
+            current = current - 1;
+            continue;
+          }
+          // 오른쪽 가로줄 확인
+          const hasRight = rungs.some(r => r.row === row && r.col === current);
+          if (hasRight) {
+            current = current + 1;
+          }
+        }
+        return current;
+      }
+
+      // 경로 그리기 로직 제거 (비표시)
+
+      function renderNumberBar() {
+        ladderNumberBarEl.innerHTML = '';
+        const locked = getLocks();
+        const userLocked = isUserLocked();
+        for (let i = 0; i < names.length; i++) {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn secondary';
+          btn.textContent = String(i + 1);
+          btn.setAttribute('aria-label', `시작 번호 ${i + 1}`);
+          if (userLocked) {
+            btn.disabled = true;
+            btn.title = '이미 결과를 확인했습니다.';
+          } else if (locked.has(i)) {
+            btn.disabled = true;
+            btn.title = '이미 확인된 번호';
+          }
+          btn.addEventListener('click', function() {
+            if (isUserLocked()) return;
+            const currentLocks = getLocks();
+            if (currentLocks.has(i)) return;
+            selectedStartCol = i;
+            const endCol = traverse(i);
+            lastWinnerCol = endCol;
+            const winner = names[endCol];
+            ladderResultEl.innerHTML = `당신의 X는 <strong>${escapeHtml(winner)}</strong>입니다! X를 소개하는 소개서를 작성해서 약속의날에 만나요!`;
+            // 잠금 처리 및 버튼 비활성화
+            currentLocks.add(i);
+            saveLocks(currentLocks);
+            btn.disabled = true;
+            btn.title = '이미 확인된 번호';
+            setUserLocked(true);
+            disableAllNumberButtons();
+          });
+          ladderNumberBarEl.appendChild(btn);
+        }
+        if (userLocked) {
+          disableAllNumberButtons();
+        }
+      }
+
+      // ===== 잠금 저장소 유틸 =====
+      function computeLocksKey() {
+        // 참가자 배열 기반 키: 참가자 변경 시 별도 잠금 영역 사용
+        try {
+          return 'ladderLocks:' + btoa(unescape(encodeURIComponent(JSON.stringify(names))));
+        } catch (e) {
+          return 'ladderLocks:' + JSON.stringify(names);
+        }
+      }
+      function getLocks() {
+        if (!locksKey) locksKey = computeLocksKey();
+        try {
+          const raw = localStorage.getItem(locksKey);
+          if (!raw) return new Set();
+          const arr = JSON.parse(raw);
+          if (!Array.isArray(arr)) return new Set();
+          return new Set(arr);
+        } catch {
+          return new Set();
+        }
+      }
+      function saveLocks(lockSet) {
+        if (!locksKey) locksKey = computeLocksKey();
+        try {
+          localStorage.setItem(locksKey, JSON.stringify(Array.from(lockSet)));
+        } catch {}
+      }
+      function clearLocks() {
+        if (!locksKey) locksKey = computeLocksKey();
+        try {
+          localStorage.removeItem(locksKey);
+        } catch {}
+        locksKey = '';
+      }
+
+      // ===== 제목 입력 핸들링 =====
+      if (resultTitleInput) {
+        resultTitleInput.addEventListener('input', function() {
+          const val = resultTitleInput.value.trim();
+          if (ladderView.style.display !== 'none') {
+            ladderTitleEl.textContent = val;
+          }
+          try { localStorage.setItem(TITLE_KEY, val); } catch {}
+        });
+      }
+
+      function disableAllNumberButtons() {
+        const buttons = ladderNumberBarEl.querySelectorAll('button');
+        buttons.forEach(btn => {
+          btn.disabled = true;
+          btn.title = '이미 결과를 확인했습니다.';
+        });
+      }
+
+      function isUserLocked() {
+        try {
+          return localStorage.getItem(USER_LOCK_KEY) === 'true';
+        } catch {
+          return false;
+        }
+      }
+
+      function setUserLocked(val) {
+        try {
+          localStorage.setItem(USER_LOCK_KEY, val ? 'true' : 'false');
+        } catch {}
+      }
+
+      // 드롭다운 로직 제거
+    })();
+  </script>
+</body>
+</html>
+
